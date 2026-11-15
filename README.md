@@ -18,39 +18,6 @@ Abre **`dist/index.html`** con doble clic. Todo funciona sin servidor: la navega
 rutas con `#`, el código va incrustado en el HTML y las imágenes son archivos relativos.
 (Las tipografías se cargan de Google Fonts si hay internet; sin conexión se usan las del sistema.)
 
-### Para desarrollar
-Requiere Node.js 18 o superior.
-
-```bash
-npm install
-npm run dev       # servidor de desarrollo en http://localhost:3000
-npm run build     # genera dist/ (vuelve a ejecutarlo antes de cada push)
-npm run preview   # sirve dist/ como en producción
-npm run lint
-```
-
-## Publicar en Vercel
-1. Sube el repositorio a GitHub.
-2. En Vercel: **Add New → Project** e importa el repositorio.
-3. Vercel lee `vercel.json` (framework Vite, `npm run build`, salida `dist`). No hace falta configurar nada más.
-
-Como las rutas usan `#` (por ejemplo `/#/station`), no se necesitan reglas de reescritura.
-
-## Estructura
-
-```
-index.html            Entrada de Vite (desarrollo)
-dist/                 Versión lista para abrir o publicar
-public/               Imágenes estáticas (escenas, mapas, logo del equipo)
-src/
-  assets/sprites/     Sprites SVG de los personajes (se incrustan en la página)
-  components/         Interfaz: layout, contenido, retos, navegación, providers
-  screens/            Pantallas: bienvenida, estación, mapas, expediente, reto, fragmento, constelación
-  data/               Datos de NASA (con fuentes) y perfiles de personajes
-  i18n/               Textos en español e inglés
-  styles/             Tokens, componentes, mundo visual y movimiento
-docs/                 Fuentes de NASA, verificación de datos, accesibilidad y divulgación de IA
-```
 
 ## Datos científicos y fuentes
 Los datos de las misiones vienen de fuentes primarias de NASA, JPL y NSSDCA. Cada tarjeta
