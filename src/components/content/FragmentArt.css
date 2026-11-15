@@ -1,0 +1,24 @@
+/* Fragment art life */
+.fragment-art__twinkle,
+.fragment-art__rotor,
+.fragment-art__berry,
+.fragment-art__scoop { transform-box: fill-box; transform-origin: center; }
+.fragment-art__twinkle { animation: fragment-art-twinkle 2.2s ease-in-out infinite; }
+.fragment-art__rotor { animation: fragment-art-rotor 160ms linear infinite alternate; }
+.fragment-art__rotor--lower { animation-direction: alternate-reverse; }
+.fragment-art__berry { animation: fragment-art-berry 2.4s ease-in-out infinite alternate; }
+.fragment-art__berry:nth-of-type(2) { animation-delay: -.8s; }
+.fragment-art__berry:nth-of-type(3) { animation-delay: -1.6s; }
+.fragment-art__scoop { transform-origin: 90% 0; animation: fragment-art-scoop 2.6s ease-in-out infinite; }
+.fragment-art__route { animation: fragment-art-route 1.6s linear infinite; }
+
+@keyframes fragment-art-twinkle { 0%, 100% { opacity: .4; scale: .7; } 50% { opacity: 1; scale: 1.15; } }
+@keyframes fragment-art-rotor { to { scale: .3 1; } }
+@keyframes fragment-art-berry { to { translate: 0 -1.5px; } }
+@keyframes fragment-art-scoop { 0%, 100% { rotate: 0deg; } 45% { rotate: 12deg; } }
+@keyframes fragment-art-route { to { stroke-dashoffset: -20; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .fragment-art__twinkle, .fragment-art__rotor, .fragment-art__berry, .fragment-art__scoop, .fragment-art__route { animation: none; }
+}
+html.reduced-motion :is(.fragment-art__twinkle, .fragment-art__rotor, .fragment-art__berry, .fragment-art__scoop, .fragment-art__route) { animation: none; }

@@ -1,0 +1,17 @@
+.character-illustration {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.character-illustration__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.character-illustration[data-character='keeper'] {
+  position: relative;
+  display: block;
+  isolation: isolate;
+}

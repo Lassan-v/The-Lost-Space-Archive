@@ -1,0 +1,193 @@
+/**
+ * Layout Components — The Lost Space Archive
+ * AppShell, PersistentHeader, PageLayout, ScreenContainer
+ */
+
+/* ==========================================================================
+   PAGE LAYOUT
+   ========================================================================== */
+
+.page-layout {
+  flex: 1;
+  width: 100%;
+  max-width: var(--container-desktop);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md) var(--space-3xl);
+}
+
+@media (min-width: 641px) {
+  .page-layout {
+    padding: var(--space-2xl) var(--space-xl) var(--space-4xl);
+  }
+}
+
+@media (min-width: 1025px) {
+  .page-layout {
+    padding: var(--space-3xl) var(--space-2xl) var(--space-4xl);
+  }
+}
+
+.page-layout__header {
+  margin-bottom: var(--space-xl);
+}
+
+.page-layout__back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+  transition: color var(--dur-fast) var(--ease-smooth);
+}
+
+.page-layout__back-link:hover {
+  color: var(--color-accent-primary);
+}
+
+.page-layout__back-link:focus-visible {
+  border-radius: var(--radius-sm);
+}
+
+.page-layout__title-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.page-layout__title {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-weight-extrabold);
+}
+
+.page-layout__subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-normal);
+}
+
+.page-layout__content {
+  width: 100%;
+}
+
+/* ==========================================================================
+   SCREEN CONTAINER (Full viewport screens)
+   ========================================================================== */
+
+.screen-container {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  flex-direction: column;
+}
+
+.screen-container__content {
+  flex: 1;
+  width: 100%;
+  max-width: var(--container-desktop);
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md) var(--space-xl);
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 641px) {
+  .screen-container__content {
+    padding: var(--space-xl) var(--space-xl) var(--space-2xl);
+  }
+}
+
+@media (min-width: 1025px) {
+  .screen-container__content {
+    padding: var(--space-2xl) var(--space-2xl) var(--space-3xl);
+  }
+}
+
+/* ==========================================================================
+   BREADCRUMB
+   ========================================================================== */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.breadcrumb__list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+}
+
+.breadcrumb__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.breadcrumb__link {
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+  transition: color var(--dur-fast) var(--ease-smooth);
+}
+
+.breadcrumb__link:hover {
+  color: var(--color-accent-primary);
+}
+
+.breadcrumb__separator {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.breadcrumb__current {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ==========================================================================
+   RESPONSIVE UTILITIES
+   ========================================================================== */
+
+@media (max-width: 640px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .hide-tablet {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+/* Container padding responsive */
+.container-padding {
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+}
+
+@media (min-width: 641px) {
+  .container-padding {
+    padding-left: var(--space-xl);
+    padding-right: var(--space-xl);
+  }
+}
+
+@media (min-width: 1025px) {
+  .container-padding {
+    padding-left: var(--space-2xl);
+    padding-right: var(--space-2xl);
+  }
+}

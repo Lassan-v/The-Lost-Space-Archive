@@ -1,0 +1,868 @@
+{
+  "project": {
+    "title": "The Lost Space Archive",
+    "challenge": "Abandoned but Not Forgotten",
+    "data_catalog_version": "0.2.0",
+    "created_date": "2026-11-14",
+    "language": "en",
+    "notes": "Structured science catalog. The MVP contains six physical objects in five narrative dossiers; Apollo 15 and Apollo 16 LRV records remain catalog-only. Source-specific verification status is recorded per fact and source."
+  },
+  "mvp_scope": {
+    "narrative_dossier_ids": [
+      "mars_mer_rovers",
+      "mars_sojourner",
+      "mars_ingenuity",
+      "moon_surveyor3",
+      "moon_apollo17_lrv"
+    ],
+    "playable_object_ids": [
+      "mars_spirit",
+      "mars_opportunity",
+      "mars_sojourner",
+      "mars_ingenuity",
+      "moon_surveyor3",
+      "moon_apollo17_lrv"
+    ],
+    "catalog_only_object_ids": [
+      "moon_apollo15_lrv",
+      "moon_apollo16_lrv"
+    ],
+    "implementation_status": "All five bilingual dossiers and activities implemented for six playable objects; Apollo 15 and 16 remain catalog-only."
+  },
+  "challenge_data_integration": {
+    "candidate_required_source": "SRC-017",
+    "source_name": "Mars Pathfinder Project Information (NSSDCA)",
+    "source_url": "https://nssdc.gsfc.nasa.gov/planetary/mesur.html",
+    "planned_use": [
+      "Use NSSDCA mission records and/or data-set records to populate the in-game factual timeline and mission dossier fields.",
+      "Keep source IDs attached to the data displayed in the experience.",
+      "Document the exact NSSDCA record or data product used, its retrieval date, fields extracted, and the gameplay feature it powers."
+    ],
+    "status": "SRC-017 facts power the Sojourner dossier and builder context; source-linked NASA Science and NSSDCA facts for all other playable objects power dossiers and activities."
+  },
+  "dossiers": [
+    {
+      "dossier_id": "mars_mer_rovers",
+      "title": "The Twin Mars Explorers",
+      "object_ids": [
+        "mars_spirit",
+        "mars_opportunity"
+      ],
+      "note": "One narrative dossier; two separate factual object records."
+    },
+    {
+      "dossier_id": "mars_sojourner",
+      "title": "The Little Pathfinder",
+      "object_ids": [
+        "mars_sojourner"
+      ],
+      "note": "Sojourner rover record; keep separate from Pathfinder lander instrument data."
+    },
+    {
+      "dossier_id": "mars_ingenuity",
+      "title": "The First Flight",
+      "object_ids": [
+        "mars_ingenuity"
+      ],
+      "note": "Technology demonstration helicopter; not a rover."
+    },
+    {
+      "dossier_id": "moon_surveyor3",
+      "title": "The Lunar Visitor",
+      "object_ids": [
+        "moon_surveyor3"
+      ],
+      "note": "Stationary lunar lander later visited by Apollo 12 astronauts."
+    },
+    {
+      "dossier_id": "moon_apollo17_lrv",
+      "title": "Apollo 17 Lunar Roving Vehicle",
+      "object_ids": [
+        "moon_apollo17_lrv"
+      ],
+      "note": "Apollo 17 is the playable MVP vehicle. Apollo 15 and Apollo 16 remain separate catalog-only records."
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "mars_spirit",
+      "narrative_dossier_id": "mars_mer_rovers",
+      "canonical_name": "Spirit",
+      "display_name_es": "Spirit",
+      "destination": "Mars",
+      "hardware_type": "Rover",
+      "mission_name": "Mars Exploration Rover (MER-A)",
+      "program": "Mars Exploration Program",
+      "launch_date": "2003-06-10",
+      "landing_or_arrival_date": "2004-01-03",
+      "deployment_date": null,
+      "first_operation_date": "2004-01-03",
+      "last_contact_date": "2010-03 (exact day to verify)",
+      "last_activity_date": null,
+      "mission_end_date": "2011-05-25",
+      "landing_site": "Gusev Crater, Mars",
+      "latitude": null,
+      "longitude": null,
+      "primary_objective": "Study Martian rocks and soil for geological evidence of past water and characterize the surface environment.",
+      "scientific_instruments": [
+        "Panoramic Camera (Pancam)",
+        "Navigation Cameras (Navcam)",
+        "Miniature Thermal Emission Spectrometer (Mini-TES)",
+        "Mössbauer Spectrometer",
+        "Alpha Particle X-ray Spectrometer (APXS)",
+        "Magnets",
+        "Microscopic Imager",
+        "Rock Abrasion Tool (RAT)"
+      ],
+      "key_findings": [
+        "Found strong evidence that Mars was once wetter than it is today."
+      ],
+      "distance_or_flights": "7.73 km driven (NASA mission profile; rounded elsewhere to 7.7 km)",
+      "operational_duration": "6 years, 2 months, 19 days (NASA mission profile)",
+      "mission_end_or_fate": "NASA ended efforts to contact the rover on 2011-05-25 after it had been silent since March 2010.",
+      "fictional_story_boundary": "Any first-person voice, feelings or personality assigned to Spirit are fictional personification; mission facts remain sourced.",
+      "gameplay_opportunity": "Evidence puzzle: inspect rocks and clues to infer past water activity.",
+      "candidate_interactive_data": "Landing site, mission timeline, instrument-to-purpose mapping, total distance and mission duration.",
+      "source_ids": [
+        "SRC-001",
+        "SRC-002"
+      ],
+      "verification_status": "Selected mission facts verified against SRC-002; other catalog fields remain preliminary",
+      "open_questions": "Confirm exact last-contact date if displayed; verify instrument names/translations and the preferred distance precision.",
+      "image_credit_notes": "Use NASA/JPL image assets with their individual credit lines; keep generated artwork visually distinct from official mission photography.",
+      "verified_facts": [
+        {
+          "fact_id": "spirit-site",
+          "text": "Spirit explored Gusev Crater and searched rocks and soil for clues about past water.",
+          "source_id": "SRC-002",
+          "category": "history"
+        },
+        {
+          "fact_id": "spirit-silica",
+          "text": "Spirit found a patch rich in silica, a clue that may point to ancient hot-water activity.",
+          "source_id": "SRC-002",
+          "category": "findings"
+        },
+        {
+          "fact_id": "spirit-objective",
+          "category": "objective",
+          "text": "Spirit was sent to explore rocks and soil for clues about whether water once changed Mars.",
+          "source_id": "SRC-002"
+        },
+        {
+          "fact_id": "spirit-timeline",
+          "category": "timeline",
+          "text": "Spirit launched June 10, 2003, and landed in Gusev Crater on January 3, 2004.",
+          "source_id": "SRC-002"
+        },
+        {
+          "fact_id": "spirit-tools",
+          "category": "capabilities",
+          "text": "Spirit used cameras, spectrometers, a microscope, magnets, and a rock-abrasion tool to study its surroundings.",
+          "source_id": "SRC-002"
+        },
+        {
+          "fact_id": "spirit-legacy",
+          "category": "legacy",
+          "text": "Spirit worked on Mars for more than six years, far beyond its planned 90-day primary mission.",
+          "source_id": "SRC-002"
+        }
+      ]
+    },
+    {
+      "object_id": "mars_opportunity",
+      "narrative_dossier_id": "mars_mer_rovers",
+      "canonical_name": "Opportunity",
+      "display_name_es": "Opportunity",
+      "destination": "Mars",
+      "hardware_type": "Rover",
+      "mission_name": "Mars Exploration Rover (MER-B)",
+      "program": "Mars Exploration Program",
+      "launch_date": "2003-07-07",
+      "landing_or_arrival_date": "2004-01-24",
+      "deployment_date": null,
+      "first_operation_date": "2004-01-24",
+      "last_contact_date": "2018-06-10",
+      "last_activity_date": null,
+      "mission_end_date": "2019-02-13",
+      "landing_site": "Meridiani Planum, Mars",
+      "latitude": null,
+      "longitude": null,
+      "primary_objective": "Study Martian rocks and soil for evidence of past water and assess whether environmental conditions may once have been favorable for life.",
+      "scientific_instruments": [
+        "Panoramic Camera (Pancam)",
+        "Navigation Cameras (Navcam)",
+        "Miniature Thermal Emission Spectrometer (Mini-TES)",
+        "Mössbauer Spectrometer",
+        "Alpha Particle X-ray Spectrometer (APXS)",
+        "Magnets",
+        "Microscopic Imager",
+        "Rock Abrasion Tool (RAT)"
+      ],
+      "key_findings": [
+        "Found evidence that Mars may once have been able to sustain microbial life."
+      ],
+      "distance_or_flights": "45.16 km driven (NASA mission profile; approximately 45 km)",
+      "operational_duration": "Almost 15 years",
+      "mission_end_or_fate": "Last communicated with Earth on 2018-06-10 during a planet-wide dust storm; NASA declared the mission ended on 2019-02-13.",
+      "fictional_story_boundary": "Any first-person voice, feelings or personality assigned to Opportunity are fictional personification; mission facts remain sourced.",
+      "gameplay_opportunity": "Compare geological clues with Spirit and reconstruct how scientists inferred ancient water.",
+      "candidate_interactive_data": "Landing site, timeline, instruments, last communication, mission end and distance traveled.",
+      "source_ids": [
+        "SRC-001",
+        "SRC-003"
+      ],
+      "verification_status": "Selected mission facts verified against SRC-003; other catalog fields remain preliminary",
+      "open_questions": "Confirm whether to display the 45.16 km exact figure or rounded 45 km; keep last communication distinct from official mission end.",
+      "image_credit_notes": "Use NASA/JPL image assets with their individual credit lines; keep generated artwork visually distinct from official mission photography.",
+      "verified_facts": [
+        {
+          "fact_id": "opportunity-site",
+          "text": "Opportunity explored Meridiani Planum, where it found tiny hematite-rich spheres nicknamed blueberries.",
+          "source_id": "SRC-003",
+          "category": "history"
+        },
+        {
+          "fact_id": "opportunity-water",
+          "text": "The rocks and hematite-rich spheres studied by Opportunity provided evidence that liquid water once affected this region.",
+          "source_id": "SRC-003",
+          "category": "findings"
+        },
+        {
+          "fact_id": "opportunity-distance",
+          "text": "NASA reports that Opportunity drove 45.16 kilometers during its mission.",
+          "source_id": "SRC-003",
+          "category": "legacy"
+        },
+        {
+          "fact_id": "opportunity-objective",
+          "category": "objective",
+          "text": "Opportunity searched Martian rocks and soil for evidence of past water and environments that could have supported life.",
+          "source_id": "SRC-003"
+        },
+        {
+          "fact_id": "opportunity-tools",
+          "category": "capabilities",
+          "text": "Opportunity used cameras, spectrometers, a microscope, magnets, and a rock-abrasion tool to examine the Martian surface.",
+          "source_id": "SRC-003"
+        },
+        {
+          "fact_id": "opportunity-timeline",
+          "category": "timeline",
+          "text": "Opportunity last communicated on June 10, 2018. NASA declared the mission ended on February 13, 2019.",
+          "source_id": "SRC-003"
+        },
+        {
+          "fact_id": "opportunity-legacy",
+          "category": "legacy",
+          "text": "Opportunity operated on Mars for almost 15 years and traveled 45.16 kilometers, according to NASA’s mission profile.",
+          "source_id": "SRC-003"
+        }
+      ]
+    },
+    {
+      "object_id": "mars_sojourner",
+      "narrative_dossier_id": "mars_sojourner",
+      "canonical_name": "Sojourner",
+      "display_name_es": "Sojourner",
+      "destination": "Mars",
+      "hardware_type": "Rover",
+      "mission_name": "Mars Pathfinder",
+      "program": "Mars Exploration Program",
+      "launch_date": "1996-12-04",
+      "landing_or_arrival_date": "1997-07-06 (Sojourner rolled onto the Martian surface)",
+      "deployment_date": "1997-07-06",
+      "first_operation_date": "1997-07-06",
+      "last_contact_date": null,
+      "last_activity_date": null,
+      "mission_end_date": null,
+      "landing_site": "Ares Vallis region, Mars (Pathfinder landing site)",
+      "latitude": null,
+      "longitude": null,
+      "primary_objective": "Demonstrate a low-cost method for delivering and operating a mobile robotic rover on Mars; investigate nearby rocks and soil.",
+      "scientific_instruments": [
+        "Alpha Proton X-ray Spectrometer (APXS)",
+        "Rover imaging cameras"
+      ],
+      "key_findings": [
+        "Performed in-situ observations and chemical measurements of Martian rocks and soil; helped demonstrate rover exploration on another planet."
+      ],
+      "distance_or_flights": "Do not add a total distance until verified from a primary mission source.",
+      "operational_duration": "83 days of operations (JPL mission profile; planned mission was 7 days)",
+      "mission_end_or_fate": "The rover operated far beyond its planned seven-day mission. Exact last communication / mission closeout date requires verification.",
+      "fictional_story_boundary": "Any first-person voice, feelings or personality assigned to Sojourner are fictional personification; mission facts remain sourced.",
+      "gameplay_opportunity": "Instrument-matching activity: choose which tool could examine a rock or capture an image.",
+      "candidate_interactive_data": "Launch and landing dates, rover-vs-lander instrument distinction, APXS purpose and 83-day operation.",
+      "verified_nssdca_facts": [
+        {
+          "fact_id": "sojourner-pathfinder-timeline",
+          "text": "The Mars Pathfinder lander reached Mars on July 4, 1997. Sojourner rolled onto the surface on July 6.",
+          "source_id": "SRC-017",
+          "category": "timeline"
+        },
+        {
+          "fact_id": "sojourner-control",
+          "text": "Sojourner had six wheels. An operator on Earth drove it using images from the rover and lander.",
+          "source_id": "SRC-017",
+          "category": "capabilities"
+        },
+        {
+          "fact_id": "sojourner-signal-delay",
+          "text": "Radio signals took about 10 minutes to travel between Earth and Mars, so Sojourner needed some ability to act on its own while waiting.",
+          "source_id": "SRC-017",
+          "category": "history"
+        },
+        {
+          "fact_id": "sojourner-planned-exploration",
+          "text": "Sojourner's first planned goals covered its first 7 Mars days, within about 10 meters of the lander.",
+          "source_id": "SRC-017",
+          "category": "history"
+        }
+      ],
+      "source_ids": [
+        "SRC-001",
+        "SRC-004",
+        "SRC-005",
+        "SRC-017"
+      ],
+      "verification_status": "Selected child-facing facts reviewed against SRC-005 and SRC-017; other catalog fields remain preliminary",
+      "open_questions": "Exact rover end/last-contact date, landing coordinates and any distance figure remain unverified. Do not attribute Pathfinder lander instruments to Sojourner.",
+      "image_credit_notes": "Use NASA/JPL image assets with their individual credit lines; keep generated artwork visually distinct from official mission photography.",
+      "verified_facts": [
+        {
+          "fact_id": "sojourner-objective",
+          "category": "objective",
+          "text": "Mars Pathfinder tested a way to deliver and operate a small mobile rover on Mars.",
+          "source_id": "SRC-017"
+        },
+        {
+          "fact_id": "sojourner-tools",
+          "category": "capabilities",
+          "text": "Sojourner carried an Alpha Proton X-ray Spectrometer (APXS) and rover cameras to study rocks and the nearby surface.",
+          "source_id": "SRC-005"
+        },
+        {
+          "fact_id": "sojourner-legacy",
+          "category": "legacy",
+          "text": "Sojourner operated for 83 days, far beyond its planned seven-day rover mission.",
+          "source_id": "SRC-005"
+        }
+      ]
+    },
+    {
+      "object_id": "mars_ingenuity",
+      "narrative_dossier_id": "mars_ingenuity",
+      "canonical_name": "Ingenuity Mars Helicopter",
+      "display_name_es": "Ingenuity",
+      "destination": "Mars",
+      "hardware_type": "Technology-demonstration helicopter / rotorcraft",
+      "mission_name": "Mars 2020 (carried by Perseverance)",
+      "program": "Mars Exploration Program",
+      "launch_date": "2020-07-30",
+      "landing_or_arrival_date": "2021-02-18 (arrived attached beneath Perseverance)",
+      "deployment_date": "2021-04-04",
+      "first_operation_date": "2021-04-19 (first powered, controlled flight)",
+      "last_contact_date": "2024-01-18 flight data; communications restored the following day (see notes)",
+      "last_activity_date": "2024-01-18",
+      "mission_end_date": "2024-01-25",
+      "landing_site": "Jezero Crater, Mars",
+      "latitude": null,
+      "longitude": null,
+      "primary_objective": "Demonstrate that powered, controlled flight is possible in the thin atmosphere of Mars; later support rover route scouting and operations demonstrations.",
+      "scientific_instruments": [
+        "No dedicated scientific instrument suite. Two cameras: a color terrain-imaging camera and a black-and-white navigation camera."
+      ],
+      "key_findings": [
+        "Completed the first powered, controlled flight on another planet on 2021-04-19.",
+        "Completed 72 flights; the final flight was 2024-01-18."
+      ],
+      "distance_or_flights": "72 flights; NASA sources report approximately 11 miles (about 17.7 km) flown — verify preferred cumulative-distance figure before use.",
+      "operational_duration": "Almost three years on Mars",
+      "mission_end_or_fate": "After Flight 72 on 2024-01-18, rotor-blade damage made further flight impossible; NASA announced the end of the mission on 2024-01-25.",
+      "fictional_story_boundary": "Any first-person voice, feelings or personality assigned to Ingenuity are fictional personification; mission facts remain sourced.",
+      "gameplay_opportunity": "Flight-planning simulation showing why thin atmosphere, autonomous navigation and rotor speed matter.",
+      "candidate_interactive_data": "Launch/arrival/deployment/first-flight timeline, 72 flights, camera functions and final flight.",
+      "source_ids": [
+        "SRC-001",
+        "SRC-006",
+        "SRC-007",
+        "SRC-008"
+      ],
+      "verification_status": "Selected mission facts verified against SRC-006; other catalog fields remain preliminary",
+      "open_questions": "Do not describe Ingenuity as a rover or science lab. Distinguish arrival, deployment, first flight, last flight and mission-end announcement. Verify cumulative flight distance if used.",
+      "image_credit_notes": "Use NASA/JPL image assets with their individual credit lines; keep generated artwork visually distinct from official mission photography.",
+      "verified_facts": [
+        {
+          "fact_id": "ingenuity-first-flight",
+          "text": "On April 19, 2021, Ingenuity made the first powered, controlled flight on another planet.",
+          "source_id": "SRC-006",
+          "category": "findings"
+        },
+        {
+          "fact_id": "ingenuity-flights",
+          "text": "Ingenuity completed 72 flights. Its final flight was January 18, 2024; NASA announced the mission end on January 25.",
+          "source_id": "SRC-006",
+          "category": "legacy"
+        },
+        {
+          "fact_id": "ingenuity-objective",
+          "category": "objective",
+          "text": "Ingenuity was built to test whether powered, controlled flight could work in Mars’s thin atmosphere.",
+          "source_id": "SRC-006"
+        },
+        {
+          "fact_id": "ingenuity-capabilities",
+          "category": "capabilities",
+          "text": "Ingenuity carried a color terrain camera and a black-and-white navigation camera; it was a technology demonstration, not a rover.",
+          "source_id": "SRC-006"
+        },
+        {
+          "fact_id": "ingenuity-timeline",
+          "category": "timeline",
+          "text": "Ingenuity arrived with Perseverance in February 2021, made its first flight on April 19, 2021, and its final flight on January 18, 2024.",
+          "source_id": "SRC-006"
+        },
+        {
+          "fact_id": "ingenuity-legacy",
+          "category": "legacy",
+          "text": "After its flight test succeeded, Ingenuity also helped the Perseverance team scout routes from the air.",
+          "source_id": "SRC-006"
+        }
+      ]
+    },
+    {
+      "object_id": "moon_surveyor3",
+      "narrative_dossier_id": "moon_surveyor3",
+      "canonical_name": "Surveyor 3",
+      "display_name_es": "Surveyor 3",
+      "destination": "Moon",
+      "hardware_type": "Lunar soft-lander",
+      "mission_name": "Surveyor 3",
+      "program": "Surveyor Program",
+      "launch_date": "1967-04-17",
+      "landing_or_arrival_date": "1967-04-20",
+      "deployment_date": null,
+      "first_operation_date": "1967-04-20",
+      "last_contact_date": "1967-05-04",
+      "last_activity_date": null,
+      "mission_end_date": "1967-05-04 (last contact; formal end wording to verify)",
+      "landing_site": "Southeastern Oceanus Procellarum, Moon",
+      "latitude": "3.00° S",
+      "longitude": "23.41° W",
+      "primary_objective": "Achieve a soft landing on the Moon and investigate the lunar surface, including its mechanical properties.",
+      "scientific_instruments": [
+        "Television camera",
+        "Surface sampler"
+      ],
+      "key_findings": [
+        "Surface-sampling tests helped show that the lunar surface could support the weight of an Apollo lunar module."
+      ],
+      "distance_or_flights": "Not applicable — stationary lander.",
+      "operational_duration": "Last contact on 1967-05-04; exact active duration should be calculated only after confirming time convention.",
+      "mission_end_or_fate": "Lost contact on 1967-05-04. Apollo 12 astronauts visited the lander in November 1969 and retrieved selected hardware/components for study; verify the exact list of returned components before naming them.",
+      "fictional_story_boundary": "Any first-person voice, feelings or personality assigned to Surveyor 3 are fictional personification; mission facts remain sourced.",
+      "gameplay_opportunity": "Virtual surface-sampler activity: choose how to collect and examine lunar soil.",
+      "candidate_interactive_data": "Launch/landing/last-contact timeline, landing coordinates, TV camera and surface sampler functions, Apollo 12 revisit.",
+      "source_ids": [
+        "SRC-001",
+        "SRC-009",
+        "SRC-012",
+        "SRC-013"
+      ],
+      "verification_status": "Selected mission facts verified against SRC-009; other catalog fields remain preliminary",
+      "open_questions": "NASA Science page shows two different UT landing-time values in different sections; retain date only until resolved. Verify the exact hardware retrieved by Apollo 12 and whether mission end should be recorded as last contact.",
+      "image_credit_notes": "Use NASA image credits exactly as published; avoid implying Surveyor 3 was operational when Apollo 12 visited in 1969.",
+      "verified_facts": [
+        {
+          "fact_id": "surveyor-sampler",
+          "text": "Surveyor 3 used a surface sampler to dig four trenches, perform four bearing tests, and make thirteen impact tests.",
+          "source_id": "SRC-009",
+          "category": "findings"
+        },
+        {
+          "fact_id": "surveyor-apollo12",
+          "text": "Apollo 12 astronauts visited Surveyor 3 in 1969 and returned its soil scoop and television camera for study.",
+          "source_id": "SRC-009",
+          "category": "legacy"
+        },
+        {
+          "fact_id": "surveyor-objective",
+          "category": "objective",
+          "text": "Surveyor 3 tested a soft landing and investigated the Moon’s surface and soil.",
+          "source_id": "SRC-009"
+        },
+        {
+          "fact_id": "surveyor-tools",
+          "category": "capabilities",
+          "text": "Surveyor 3 used a television camera and a surface sampler to examine the lunar ground.",
+          "source_id": "SRC-009"
+        },
+        {
+          "fact_id": "surveyor-timeline",
+          "category": "timeline",
+          "text": "Surveyor 3 landed on April 20, 1967, and last communicated on May 4, 1967. Apollo 12 astronauts visited it in 1969.",
+          "source_id": "SRC-009"
+        },
+        {
+          "fact_id": "surveyor-legacy",
+          "category": "legacy",
+          "text": "Apollo 12 returned Surveyor 3’s soil scoop and television camera so scientists could study them on Earth.",
+          "source_id": "SRC-009"
+        }
+      ]
+    },
+    {
+      "object_id": "moon_apollo15_lrv",
+      "narrative_dossier_id": "moon_lunar_rovings",
+      "canonical_name": "Apollo 15 Lunar Roving Vehicle",
+      "display_name_es": "Vehículo lunar de Apollo 15",
+      "destination": "Moon",
+      "hardware_type": "Crewed battery-powered electric lunar rover",
+      "mission_name": "Apollo 15",
+      "program": "Apollo Program",
+      "launch_date": "1971-07-26",
+      "landing_or_arrival_date": "1971-07-30 (Apollo 15 lunar landing; confirm mission timeline)",
+      "deployment_date": "1971-07-31 (first lunar EVA / rover use; verify exact deployment time)",
+      "first_operation_date": "1971-07-31",
+      "last_contact_date": null,
+      "last_activity_date": "1971-08-02 (last lunar surface EVA; verify)",
+      "mission_end_date": "1971-08-07 (Apollo 15 mission return; rover remained on Moon)",
+      "landing_site": "Hadley–Apennine region, Moon",
+      "latitude": null,
+      "longitude": null,
+      "primary_objective": "Extend astronauts' mobility and scientific exploration range during Apollo 15 lunar surface traverses.",
+      "scientific_instruments": [
+        "No dedicated autonomous science instrument suite. Carried astronauts, tools, communications equipment and scientific equipment/samples."
+      ],
+      "key_findings": [
+        "Enabled longer lunar traverses and collection of samples across a wider area."
+      ],
+      "distance_or_flights": "27.8 km total driving distance; 3 h 2 min drive time; longest traverse 12.5 km; maximum range from lunar module 5.0 km (NSSDCA values).",
+      "operational_duration": "Three lunar traverses during Apollo 15 surface operations.",
+      "mission_end_or_fate": "Left on the lunar surface at the end of Apollo 15 surface operations.",
+      "fictional_story_boundary": "Any first-person voice, feelings or personality assigned to the LRV are fictional personification; mission facts remain sourced.",
+      "gameplay_opportunity": "Route-planning challenge: choose a safe exploration route while tracking distance from the lunar module.",
+      "candidate_interactive_data": "Total distance, drive time, longest traverse, maximum range and mission/crew timeline.",
+      "source_ids": [
+        "SRC-001",
+        "SRC-010",
+        "SRC-011",
+        "SRC-014"
+      ],
+      "verification_status": "Preliminary — verify against linked sources",
+      "open_questions": "Check date of rover deployment and last EVA. NASA historical sources report slightly different distance values (e.g. 27.8 vs 27.9 km); use NSSDCA value in a source-specific field and document discrepancy.",
+      "image_credit_notes": "Use NASA image credits exactly as published; distinguish the three physical vehicles even if the game groups them in one dossier."
+    },
+    {
+      "object_id": "moon_apollo16_lrv",
+      "narrative_dossier_id": "moon_lunar_rovings",
+      "canonical_name": "Apollo 16 Lunar Roving Vehicle",
+      "display_name_es": "Vehículo lunar de Apollo 16",
+      "destination": "Moon",
+      "hardware_type": "Crewed battery-powered electric lunar rover",
+      "mission_name": "Apollo 16",
+      "program": "Apollo Program",
+      "launch_date": "1972-04-16",
+      "landing_or_arrival_date": "1972-04-21 (Apollo 16 lunar landing; confirm mission timeline)",
+      "deployment_date": "1972-04-21 (first lunar EVA / rover use; verify exact deployment time)",
+      "first_operation_date": "1972-04-21",
+      "last_contact_date": null,
+      "last_activity_date": "1972-04-23 (last lunar surface EVA; verify)",
+      "mission_end_date": "1972-04-27 (Apollo 16 mission return; rover remained on Moon)",
+      "landing_site": "Descartes Highlands, Moon",
+      "latitude": null,
+      "longitude": null,
+      "primary_objective": "Extend astronauts' mobility and scientific exploration range during Apollo 16 lunar surface traverses.",
+      "scientific_instruments": [
+        "No dedicated autonomous science instrument suite. Carried astronauts, tools, communications equipment and scientific equipment/samples."
+      ],
+      "key_findings": [
+        "Enabled longer lunar traverses and collection of samples across a wider area."
+      ],
+      "distance_or_flights": "26.7 km total driving distance; 3 h 26 min drive time; longest traverse 11.6 km; maximum range from lunar module 4.5 km (NSSDCA values).",
+      "operational_duration": "Three lunar traverses during Apollo 16 surface operations.",
+      "mission_end_or_fate": "Left on the lunar surface at the end of Apollo 16 surface operations.",
+      "fictional_story_boundary": "Any first-person voice, feelings or personality assigned to the LRV are fictional personification; mission facts remain sourced.",
+      "gameplay_opportunity": "Route-planning challenge: compare traverses and choose a route within a safe return range.",
+      "candidate_interactive_data": "Total distance, drive time, longest traverse, maximum range and mission/crew timeline.",
+      "source_ids": [
+        "SRC-001",
+        "SRC-010",
+        "SRC-011",
+        "SRC-015"
+      ],
+      "verification_status": "Preliminary — verify against linked sources",
+      "open_questions": "Check date of rover deployment and last EVA. Confirm the Apollo 16 crew pairing and retain NSSDCA's 26.7 km value with provenance.",
+      "image_credit_notes": "Use NASA image credits exactly as published; distinguish the three physical vehicles even if the game groups them in one dossier."
+    },
+    {
+      "object_id": "moon_apollo17_lrv",
+      "narrative_dossier_id": "moon_apollo17_lrv",
+      "canonical_name": "Apollo 17 Lunar Roving Vehicle",
+      "display_name_es": "Vehículo lunar de Apollo 17",
+      "destination": "Moon",
+      "hardware_type": "Crewed battery-powered electric lunar rover",
+      "mission_name": "Apollo 17",
+      "program": "Apollo Program",
+      "launch_date": "1972-12-07",
+      "landing_or_arrival_date": "1972-12-11 (Apollo 17 lunar landing; confirm mission timeline)",
+      "deployment_date": "1972-12-11 (first lunar EVA / rover use; verify exact deployment time)",
+      "first_operation_date": "1972-12-11",
+      "last_contact_date": null,
+      "last_activity_date": "1972-12-14 (last lunar surface EVA; verify)",
+      "mission_end_date": "1972-12-19 (Apollo 17 mission return; rover remained on Moon)",
+      "landing_site": "Taurus–Littrow Valley, Moon",
+      "latitude": null,
+      "longitude": null,
+      "primary_objective": "Extend astronauts' mobility and scientific exploration range during Apollo 17 lunar surface traverses.",
+      "scientific_instruments": [
+        "No dedicated autonomous science instrument suite. Carried astronauts, tools, communications equipment and scientific equipment/samples."
+      ],
+      "key_findings": [
+        "Enabled longer lunar traverses and collection of samples across a wider area."
+      ],
+      "distance_or_flights": "35.9 km total driving distance; 4 h 26 min drive time; longest traverse 20.1 km; maximum range from lunar module 7.6 km (NSSDCA values).",
+      "operational_duration": "Three lunar traverses during Apollo 17 surface operations.",
+      "mission_end_or_fate": "Left on the lunar surface at the end of Apollo 17 surface operations.",
+      "fictional_story_boundary": "Any first-person voice, feelings or personality assigned to the LRV are fictional personification; mission facts remain sourced.",
+      "gameplay_opportunity": "Route-planning challenge: compare the three Apollo rovers and identify the longest total route.",
+      "candidate_interactive_data": "Total distance, drive time, longest traverse, maximum range and mission/crew timeline.",
+      "source_ids": [
+        "SRC-001",
+        "SRC-010",
+        "SRC-011",
+        "SRC-016"
+      ],
+      "verification_status": "Selected mission facts verified against SRC-010; other catalog fields remain preliminary",
+      "open_questions": "Check date of rover deployment and last EVA. NASA sources differ on Apollo 17 total distance (NSSDCA says 35.9 km; other NASA mission material may show different values); preserve source provenance.",
+      "image_credit_notes": "Use NASA image credits exactly as published; distinguish the three physical vehicles even if the game groups them in one dossier.",
+      "verified_facts": [
+        {
+          "fact_id": "apollo17-traverses",
+          "text": "The Apollo 17 lunar rover was used on three traverses and covered 35.9 kilometers in total.",
+          "source_id": "SRC-010",
+          "category": "timeline"
+        },
+        {
+          "fact_id": "apollo17-longest-traverse",
+          "text": "Apollo 17’s longest single traverse was 20.1 kilometers. Its maximum distance from the lunar module was 7.6 kilometers.",
+          "source_id": "SRC-010",
+          "category": "legacy"
+        },
+        {
+          "fact_id": "apollo17-objective",
+          "category": "objective",
+          "text": "The Apollo 17 Lunar Roving Vehicle helped astronauts explore more of the lunar surface during their mission.",
+          "source_id": "SRC-010"
+        },
+        {
+          "fact_id": "apollo17-capabilities",
+          "category": "capabilities",
+          "text": "The LRV was a crewed, battery-powered electric vehicle designed to carry astronauts and equipment across the Moon.",
+          "source_id": "SRC-010"
+        },
+        {
+          "fact_id": "apollo17-timeline",
+          "category": "timeline",
+          "text": "Apollo 17 astronauts used the lunar rover on three surface traverses.",
+          "source_id": "SRC-010"
+        },
+        {
+          "fact_id": "apollo17-legacy",
+          "category": "legacy",
+          "text": "The Apollo 17 rover covered 35.9 kilometers in total; its longest traverse was 20.1 kilometers, and its maximum range from the lunar module was 7.6 kilometers.",
+          "source_id": "SRC-010"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-001",
+      "title": "NSSDCA Master Catalog Information",
+      "institution": "NASA / National Space Science Data Center (NSSDCA)",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/projectdata.html",
+      "source_type": "NASA data catalog",
+      "objects": "All objects; especially mission and data-set discovery",
+      "supports": "Discovery of NASA planetary mission records and archived data sets; use this as the project’s core NASA data-catalog source.",
+      "verification_status": "Review required",
+      "notes": "For challenge compliance, document the exact NSSDCA record or data product actually incorporated into the game. A citation alone is not evidence of meaningful integration."
+    },
+    {
+      "source_id": "SRC-002",
+      "title": "Spirit",
+      "institution": "NASA Science",
+      "url": "https://science.nasa.gov/mission/mer-spirit/",
+      "source_type": "NASA mission profile",
+      "objects": "mars_spirit",
+      "supports": "Launch and landing dates, mission end, instruments, Gusev Crater, mission objective, operating duration and distance traveled.",
+      "verification_status": "Preliminary source identified",
+      "notes": "NASA reports 7.73 km traveled and mission end on May 25, 2011. Last communication date should be checked separately if needed."
+    },
+    {
+      "source_id": "SRC-003",
+      "title": "Opportunity",
+      "institution": "NASA Science",
+      "url": "https://science.nasa.gov/mission/mer-opportunity/",
+      "source_type": "NASA mission profile",
+      "objects": "mars_opportunity",
+      "supports": "Launch and landing dates, mission end, instruments, Meridiani Planum, objective, last communication and distance traveled.",
+      "verification_status": "Preliminary source identified",
+      "notes": "NASA reports last communication June 10, 2018; mission end declared February 13, 2019; distance 45.16 km."
+    },
+    {
+      "source_id": "SRC-004",
+      "title": "Mars Pathfinder",
+      "institution": "NASA Science",
+      "url": "https://science.nasa.gov/mission/mars-pathfinder/",
+      "source_type": "NASA mission profile",
+      "objects": "mars_sojourner",
+      "supports": "Pathfinder launch and landing dates, mission context and delivery of Sojourner to Mars.",
+      "verification_status": "Preliminary source identified",
+      "notes": "This is the lander mission profile. Do not attribute all Pathfinder lander instruments to the Sojourner rover."
+    },
+    {
+      "source_id": "SRC-005",
+      "title": "Mars Pathfinder / Sojourner Rover",
+      "institution": "NASA Jet Propulsion Laboratory (JPL)",
+      "url": "https://www.jpl.nasa.gov/missions/mars-pathfinder-sojourner-rover/",
+      "source_type": "NASA mission profile",
+      "objects": "mars_sojourner",
+      "supports": "Sojourner rover purpose, 83-day operation, APXS and rover imaging cameras.",
+      "verification_status": "Preliminary source identified",
+      "notes": "Use this page to distinguish rover instruments from Pathfinder lander instruments."
+    },
+    {
+      "source_id": "SRC-006",
+      "title": "Ingenuity Mars Helicopter",
+      "institution": "NASA Science",
+      "url": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/",
+      "source_type": "NASA mission profile",
+      "objects": "mars_ingenuity",
+      "supports": "Launch, arrival, first and last flight dates, destination, objective, 72 flights and mission completion.",
+      "verification_status": "Preliminary source identified",
+      "notes": "Ingenuity was a technology demonstration, not a rover carrying a scientific instrument suite."
+    },
+    {
+      "source_id": "SRC-007",
+      "title": "Ingenuity Mars Helicopter Quick Facts",
+      "institution": "NASA Jet Propulsion Laboratory (JPL)",
+      "url": "https://www.jpl.nasa.gov/news/press_kits/ingenuity/landing/quick_facts/",
+      "source_type": "NASA technical / press kit",
+      "objects": "mars_ingenuity",
+      "supports": "Rotor dimensions, power system, two cameras, launch and Mars arrival details.",
+      "verification_status": "Preliminary source identified",
+      "notes": "Check units and distinguish launch date, Mars arrival date, deployment date and first flight date."
+    },
+    {
+      "source_id": "SRC-008",
+      "title": "After Three Years on Mars, NASA’s Ingenuity Helicopter Mission Ends",
+      "institution": "NASA",
+      "url": "https://www.nasa.gov/news-release/after-three-years-on-mars-nasas-ingenuity-helicopter-mission-ends/",
+      "source_type": "NASA news release",
+      "objects": "mars_ingenuity",
+      "supports": "72nd flight, rotor-blade damage, end-of-mission announcement and mission context.",
+      "verification_status": "Preliminary source identified",
+      "notes": "NASA announced mission end on January 25, 2024 after the January 18, 2024 final flight."
+    },
+    {
+      "source_id": "SRC-009",
+      "title": "Surveyor 3",
+      "institution": "NASA Science",
+      "url": "https://science.nasa.gov/mission/surveyor-3/",
+      "source_type": "NASA mission profile",
+      "objects": "moon_surveyor3",
+      "supports": "Launch and landing dates, last contact, TV camera, surface sampler, landing location and mission objective.",
+      "verification_status": "Preliminary source identified",
+      "notes": "The page contains two slightly different UT landing-time values in different sections. Use the landing date in the MVP and flag the exact time for reconciliation."
+    },
+    {
+      "source_id": "SRC-010",
+      "title": "The Apollo Lunar Roving Vehicle",
+      "institution": "NASA / NSSDCA",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html",
+      "source_type": "NASA data catalog / mission reference",
+      "objects": "moon_apollo15_lrv; moon_apollo16_lrv; moon_apollo17_lrv",
+      "supports": "Three LRV deployments, crew associations, total driving distances, drive times, traverse distances and range from lunar module.",
+      "verification_status": "Preliminary source identified",
+      "notes": "NSSDCA reports 27.8 km, 26.7 km and 35.9 km for Apollo 15, 16 and 17 respectively. Some other NASA historical materials use slightly different figures; retain source-specific values and note discrepancies."
+    },
+    {
+      "source_id": "SRC-011",
+      "title": "Apollo 17 Press Kit — Lunar Roving Vehicle section",
+      "institution": "NASA",
+      "url": "https://science.nasa.gov/wp-content/uploads/2023/09/Apollo_17.pdf",
+      "source_type": "NASA mission press kit (PDF)",
+      "objects": "moon_apollo15_lrv; moon_apollo16_lrv; moon_apollo17_lrv",
+      "supports": "General LRV design, dimensions, batteries, operation and historical performance context.",
+      "verification_status": "Secondary cross-check",
+      "notes": "Its figures differ slightly from the NSSDCA LRV page for Apollo 15 and 16. Do not merge figures from different sources without preserving provenance."
+    },
+    {
+      "source_id": "SRC-012",
+      "title": "Apollo 12",
+      "institution": "NASA / NSSDCA",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo12info.html",
+      "source_type": "NASA mission record",
+      "objects": "moon_surveyor3",
+      "supports": "Apollo 12 mission context and lunar landing-site information.",
+      "verification_status": "Supplementary source identified",
+      "notes": "Use alongside a dedicated NASA source for the Surveyor 3 hardware/components retrieved by the Apollo 12 crew."
+    },
+    {
+      "source_id": "SRC-013",
+      "title": "Apollo 12 and Surveyor 3",
+      "institution": "NASA Science",
+      "url": "https://science.nasa.gov/resource/apollo-12-and-surveyor-3/",
+      "source_type": "NASA educational resource",
+      "objects": "moon_surveyor3",
+      "supports": "Visual and historical context for the Apollo 12 crew's visit to Surveyor 3.",
+      "verification_status": "Preliminary source identified",
+      "notes": "Verify the exact components returned to Earth before naming them in the game."
+    },
+    {
+      "source_id": "SRC-014",
+      "title": "Apollo 15",
+      "institution": "NASA",
+      "url": "https://www.nasa.gov/mission/apollo-15/",
+      "source_type": "NASA mission profile",
+      "objects": "moon_apollo15_lrv",
+      "supports": "Apollo 15 mission dates, crew and lunar surface context.",
+      "verification_status": "Review required",
+      "notes": "If the URL redirects or the page structure changes, use NASA's Apollo mission archive and record the replacement URL."
+    },
+    {
+      "source_id": "SRC-015",
+      "title": "Apollo 16",
+      "institution": "NASA",
+      "url": "https://www.nasa.gov/mission/apollo-16/",
+      "source_type": "NASA mission profile",
+      "objects": "moon_apollo16_lrv",
+      "supports": "Apollo 16 mission dates, crew and lunar surface context.",
+      "verification_status": "Review required",
+      "notes": "If the URL redirects or the page structure changes, use NASA's Apollo mission archive and record the replacement URL."
+    },
+    {
+      "source_id": "SRC-016",
+      "title": "Apollo 17",
+      "institution": "NASA",
+      "url": "https://www.nasa.gov/mission/apollo-17/",
+      "source_type": "NASA mission profile",
+      "objects": "moon_apollo17_lrv",
+      "supports": "Apollo 17 mission dates, crew and lunar surface context.",
+      "verification_status": "Review required",
+      "notes": "NASA's Apollo 17 press kit and mission details page are additional cross-checks."
+    },
+    {
+      "source_id": "SRC-017",
+      "title": "Mars Pathfinder Project Information",
+      "institution": "NASA Space Science Data Coordinated Archive (NSSDCA)",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/mesur.html",
+      "source_type": "NASA primary mission record",
+      "objects": "mars_sojourner; mars_pathfinder_lander",
+      "supports": "Pathfinder launch and lander arrival dates; Sojourner rover ramp departure date, six-wheel design, remote operator and image-based control, approximate communications delay, and planned initial operating area and duration.",
+      "verification_status": "Verified against the NSSDCA page on 2026-11-14",
+      "notes": "July 4 is Pathfinder lander arrival; NSSDCA says Sojourner rolled onto Mars on July 6. Do not attribute the lander's July 4 arrival to the rover. Integrated facts are mapped in docs/science/NSSDCA_Integration_Log.md."
+    }
+  ]
+}

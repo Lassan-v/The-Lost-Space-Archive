@@ -1,0 +1,55 @@
+# ---------------------------------------------------------------
+# Dependencies, caches and local environment
+# ---------------------------------------------------------------
+node_modules/
+.vite/
+.vercel/
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+
+# `dist/` IS committed on purpose: dist/index.html opens with a double click
+# (no Node, no Vite). Rebuild it with `npm run build` before each push.
+
+# ---------------------------------------------------------------
+# AI tooling — agents, skills, prompts, assistant memory and
+# AI work logs stay on the team's machines, not in the repo.
+# (docs/AI_DISCLOSURE.md is NOT ignored: the challenge requires it.)
+# ---------------------------------------------------------------
+.claude/
+.agents/
+.codex/
+.cursor/
+.gemini/
+.hallmark/
+.impeccable/
+.windsurf/
+CLAUDE.md
+AGENTS.md
+GEMINI.md
+AGENTS_AND_SKILLS_CATALOG.md
+PROJECT_DIRECTOR_FIRST_PROMPT.md
+UPSTREAM_INSTALLATION.md
+SETUP_AUDIT.md
+FINAL_SUMMARY.md
+MEMORY.md
+DESIGN.md
+DESIGN.json
+PRODUCT.md
+skills-lock.json
+prompts/
+*.prompt.md
+docs/PHASE*.md
+docs/VERTICAL_SLICE_PROPOSAL.md
+
+# ---------------------------------------------------------------
+# Local design references (third-party logos, chat screenshots,
+# AI concept art kept only as provenance)
+# ---------------------------------------------------------------
+referencias/

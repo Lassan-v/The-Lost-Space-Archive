@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-120 0 1680 960" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="cabin-title cabin-desc">
+  <title id="cabin-title">Interior de la cabina de la Estación de la Memoria</title>
+  <desc id="cabin-desc">Una cabina espacial acogedora con una gran ventana al espacio, la Tierra, Marte y consolas de exploración iluminadas en violeta y dorado.</desc>
+  <defs>
+    <linearGradient id="cabin-wall" x2="0" y2="1"><stop stop-color="#302064"/><stop offset=".56" stop-color="#21194D"/><stop offset="1" stop-color="#13183E"/></linearGradient>
+    <linearGradient id="cabin-window" x2="0" y2="1"><stop stop-color="#201D60"/><stop offset=".65" stop-color="#25265F"/><stop offset="1" stop-color="#513F8F"/></linearGradient>
+    <linearGradient id="cabin-console" x2="0" y2="1"><stop stop-color="#6450A9"/><stop offset=".24" stop-color="#352A70"/><stop offset="1" stop-color="#171C48"/></linearGradient>
+    <radialGradient id="cabin-glow"><stop stop-color="#B66FFF" stop-opacity=".5"/><stop offset="1" stop-color="#7343CF" stop-opacity="0"/></radialGradient>
+    <radialGradient id="earth"><stop stop-color="#A8F1FF"/><stop offset=".7" stop-color="#45BEE8"/><stop offset="1" stop-color="#4167C8"/></radialGradient>
+    <radialGradient id="mars"><stop stop-color="#FFC878"/><stop offset="1" stop-color="#EA665D"/></radialGradient>
+    <linearGradient id="glass-glint" x1="0" x2="1" y2="1"><stop stop-color="#FFF4D9" stop-opacity=".5"/><stop offset=".35" stop-color="#FFF4D9" stop-opacity="0"/></linearGradient>
+  </defs>
+  <path fill="url(#cabin-wall)" d="M-120 0h1680v960H-120z"/>
+  <ellipse cx="724" cy="284" rx="626" ry="420" fill="url(#cabin-glow)"/>
+  <path d="M0 0h1440v91l-110 50-1090-4L0 92Z" fill="#463184"/>
+  <path d="M0 0h91v960H0zm1349 0h91v960h-91z" fill="#3A2A77"/>
+  <path d="M91 0h31v960H91zm1227 0h31v960h-31z" fill="#9670DD" opacity=".68"/>
+  <path d="M116 638V175q0-112 112-112h984q112 0 112 112v463" fill="#161843" stroke="#F7D779" stroke-width="8"/>
+  <rect x="145" y="90" width="1050" height="548" rx="102" fill="url(#cabin-window)" stroke="#C7A8EE" stroke-width="22"/>
+  <rect x="163" y="108" width="1014" height="512" rx="88" fill="url(#cabin-window)" stroke="#6A50B2" stroke-width="5"/>
+  <path d="M181 461c171-74 293-55 416-8 166 64 300 47 580-48v215H181Z" fill="#6E4B9D" opacity=".74"/>
+  <path d="M181 520c203-64 331-10 477 16 159 28 308-20 519-79v163H181Z" fill="#D26C76" opacity=".45"/>
+  <g fill="#FFF4D9">
+    <circle cx="237" cy="185" r="3"/><circle cx="304" cy="142" r="2"/><circle cx="397" cy="230" r="3"/><circle cx="481" cy="157" r="2"/>
+    <circle cx="583" cy="207" r="2.5"/><circle cx="671" cy="139" r="3"/><circle cx="754" cy="178" r="2"/><circle cx="865" cy="140" r="3"/>
+    <circle cx="1121" cy="195" r="2.5"/><circle cx="1088" cy="421" r="2"/><circle cx="942" cy="485" r="2.5"/><circle cx="266" cy="392" r="2"/>
+  </g>
+  <g fill="#FFD15A">
+    <path d="m353 293 5 13 14 2-11 8 4 14-12-8-12 8 4-14-11-8 14-2z"/>
+    <path d="m752 303 4 10 11 2-9 6 3 11-9-6-9 6 3-11-9-6 11-2z"/>
+  </g>
+  <g>
+    <circle cx="1014" cy="298" r="103" fill="#C7A8EE" opacity=".45"/>
+    <circle cx="1002" cy="285" r="91" fill="url(#earth)"/>
+    <path d="M958 229q19 5 26 19l-9 17-19 3-5 22-20 5-6-20 14-19-3-17zm79 46 24 10 10 22-14 24-23 2-13-17 4-21zm-25 74 19-9 19 13-5 25-23 10-17-15z" fill="#70C889" opacity=".9"/>
+    <circle cx="310" cy="343" r="52" fill="url(#mars)"/>
+    <path d="M278 328q17-14 35-7m-16 33q16-12 34-4" fill="none" stroke="#B44A60" stroke-width="8" stroke-linecap="round" opacity=".65"/>
+  </g>
+  <path d="M192 116h328L252 595h-60zm1050 0h-204l-234 512h184z" fill="url(#glass-glint)" opacity=".24"/>
+  <path d="M0 695q150-102 346-42l92 42h564l92-42q196-60 346 42v265H0Z" fill="url(#cabin-console)"/>
+  <path d="M0 704q190-105 370-37l83 35h534l83-35q180-68 370 37" fill="none" stroke="#B78AFF" stroke-width="14" opacity=".8"/>
+  <path d="M0 843h1440" stroke="#6F59B9" stroke-width="8" opacity=".85"/>
+  <g>
+    <path d="M94 714h253q31 0 31 30v130H63V744q0-30 31-30Z" fill="#202253" stroke="#ECAFFF" stroke-width="5"/>
+    <rect x="94" y="744" width="141" height="91" rx="16" fill="#322E79" stroke="#72DDF1" stroke-width="4"/>
+    <path d="m111 810 31-32 22 14 36-32" fill="none" stroke="#FFD15A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="280" cy="770" r="12" fill="#F78B67"/><circle cx="317" cy="770" r="12" fill="#FFD15A"/><circle cx="280" cy="811" r="12" fill="#8FE4D5"/><circle cx="317" cy="811" r="12" fill="#B99AFF"/>
+    <path d="M1093 714h253q31 0 31 30v130h-315V744q0-30 31-30Z" fill="#202253" stroke="#ECAFFF" stroke-width="5"/>
+    <rect x="1120" y="744" width="202" height="91" rx="16" fill="#322E79" stroke="#72DDF1" stroke-width="4"/>
+    <path d="M1144 810h151M1144 782h151" stroke="#8FE4D5" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+    <circle cx="1153" cy="768" r="6" fill="#FFD15A"/><circle cx="1174" cy="768" r="6" fill="#F78B67"/>
+  </g>
+  <g fill="#FFD15A" stroke="#271D58" stroke-width="5">
+    <circle cx="471" cy="769" r="10"/><circle cx="507" cy="769" r="10"/><circle cx="543" cy="769" r="10"/>
+    <circle cx="897" cy="769" r="10"/><circle cx="933" cy="769" r="10"/><circle cx="969" cy="769" r="10"/>
+  </g>
+  <path d="M544 890h352" stroke="#F7D779" stroke-width="5" stroke-linecap="round" opacity=".65"/>
+</svg>

@@ -1,0 +1,228 @@
+/**
+ * PersistentHeader Styles — The Lost Space Archive
+ */
+
+.persistent-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  z-index: var(--z-fixed);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-md);
+  background: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border-subtle);
+  backdrop-filter: blur(8px);
+}
+
+.persistent-header__left,
+.persistent-header__center,
+.persistent-header__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.persistent-header__center {
+  flex: 1;
+  justify-content: center;
+}
+
+.persistent-header__right {
+  gap: var(--space-xs);
+}
+
+.language-picker select {
+  min-height: var(--touch-target-preferred);
+  max-width: 7.5rem;
+  padding: 0 var(--space-xs);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font: inherit;
+}
+
+.language-picker select:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Memory Station Button */
+.memory-station-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  min-height: var(--touch-target-preferred);
+  min-width: var(--touch-target-preferred);
+  border-radius: var(--radius-md);
+  background: var(--color-interactive);
+  color: var(--color-text-inverse);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-sm);
+  border: 2px solid var(--color-interactive);
+  transition: background-color var(--dur-fast) var(--ease-smooth), border-color var(--dur-fast) var(--ease-smooth), color var(--dur-fast) var(--ease-smooth), transform var(--dur-fast) var(--ease-smooth), opacity var(--dur-fast) var(--ease-smooth);
+}
+
+.memory-station-btn:hover:not(:disabled) {
+  background: var(--color-interactive-hover);
+  border-color: var(--color-interactive-hover);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-1px);
+}
+
+.memory-station-btn:active:not(:disabled) {
+  transform: translateY(0) scale(0.98);
+  background: var(--color-interactive-active);
+  border-color: var(--color-interactive-active);
+}
+
+.memory-station-btn:focus-visible {
+  box-shadow: var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+.memory-station-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.memory-station-btn__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.memory-station-btn__label {
+  display: none;
+}
+
+@media (min-width: 641px) {
+  .memory-station-btn__label {
+    display: inline;
+  }
+}
+
+@media (min-width: 1025px) {
+  .memory-station-btn {
+    padding: var(--space-sm) var(--space-md);
+  }
+}
+
+/* Constellation Preview Button */
+.constellation-preview-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  padding: var(--space-xs) var(--space-sm);
+  min-height: var(--touch-target-preferred);
+  min-width: var(--touch-target-preferred);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-text-primary);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-medium);
+  border: 1px solid var(--color-border-strong);
+  transition: background-color var(--dur-fast) var(--ease-smooth), border-color var(--dur-fast) var(--ease-smooth), color var(--dur-fast) var(--ease-smooth), transform var(--dur-fast) var(--ease-smooth), opacity var(--dur-fast) var(--ease-smooth);
+}
+
+.constellation-preview-btn:hover {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-accent-primary);
+}
+
+.constellation-preview-btn:focus-visible {
+  box-shadow: var(--color-focus-ring);
+}
+
+.constellation-preview-btn__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.constellation-preview-btn__count {
+  display: none;
+}
+
+@media (min-width: 641px) {
+  .constellation-preview-btn__count {
+    display: inline-flex;
+  }
+}
+
+/* Settings Button */
+.settings-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--touch-target-preferred);
+  height: var(--touch-target-preferred);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--color-text-primary);
+  transition: background-color var(--dur-fast) var(--ease-smooth), border-color var(--dur-fast) var(--ease-smooth), color var(--dur-fast) var(--ease-smooth), transform var(--dur-fast) var(--ease-smooth), opacity var(--dur-fast) var(--ease-smooth);
+}
+
+.settings-btn:hover {
+  background: var(--color-bg-tertiary);
+}
+
+.settings-btn:focus-visible {
+  box-shadow: var(--color-focus-ring);
+}
+
+.settings-options {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.settings-options label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  cursor: pointer;
+}
+
+.settings-options input {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--color-accent-primary);
+}
+
+/* High Contrast Overrides */
+@media (prefers-contrast: more) {
+  .persistent-header {
+    border-bottom-width: 3px;
+  }
+
+  .memory-station-btn {
+    border-width: 3px;
+  }
+
+  .memory-station-btn:focus-visible,
+  .constellation-preview-btn:focus-visible,
+  .settings-btn:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 0;
+    box-shadow: none;
+  }
+
+  .constellation-preview-btn {
+    border-width: 2px;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .memory-station-btn,
+  .constellation-preview-btn,
+  .settings-btn {
+    transition-duration: 0.01ms;
+  }
+}

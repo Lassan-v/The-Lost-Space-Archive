@@ -1,0 +1,142 @@
+/**
+ * PartCard Styles — The Lost Space Archive
+ */
+
+.part-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: var(--color-bg-secondary);
+  border: 2px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  min-height: 140px;
+  min-width: 120px;
+  transition: border-color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+  cursor: grab;
+  user-select: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .part-card:hover:not(.part-card--placed):not(.part-card--dragging) {
+    border-color: var(--color-accent-primary);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+}
+
+.part-card:focus-visible {
+  box-shadow: var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+.part-card--dragging {
+  opacity: 0.8;
+  transform: rotate(3deg);
+  cursor: grabbing;
+  z-index: var(--z-dropdown);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .part-card--dragging {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.part-card--placed {
+  opacity: 0.6;
+  border-color: var(--color-success);
+  cursor: default;
+  pointer-events: none;
+}
+
+.part-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 56px;
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+  color: var(--color-text-primary);
+}
+
+.part-card__icon svg {
+  width: 56px;
+  height: 48px;
+}
+
+.part-card__icon[data-part-id='solar-panel'] { color: var(--storybook-blue, #397CA9); }
+.part-card__icon[data-part-id='front-cameras'] { color: var(--storybook-purple, #6A52A1); }
+.part-card__icon[data-part-id='rear-camera'] { color: var(--storybook-rust, #A95542); }
+.part-card__icon[data-part-id='apxs-arm'] { color: var(--storybook-gold, #A87518); }
+.part-card__icon[data-part-id='wheels'] { color: var(--storybook-navy, #111D38); }
+
+.part-card[aria-disabled='false'] .part-card__icon {
+  background: var(--color-bg-primary);
+}
+
+.part-card__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2xs);
+}
+
+.part-card__label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.part-card__job {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+}
+
+.part-card__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background: var(--color-success);
+  color: var(--color-text-inverse);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-bold);
+}
+
+/* High Contrast Overrides */
+@media (prefers-contrast: more) {
+  .part-card {
+    border-width: 3px;
+  }
+
+  .part-card:hover:not(.part-card--placed):not(.part-card--dragging) {
+    border-color: var(--color-accent-primary);
+    box-shadow: none;
+    transform: none;
+  }
+
+  .part-card:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 0;
+    box-shadow: none;
+  }
+
+  .part-card--placed {
+    border-color: var(--color-success);
+    border-width: 3px;
+  }
+
+  .part-card__icon {
+    border: 2px solid var(--color-border-strong);
+  }
+}

@@ -1,0 +1,805 @@
+/**
+ * Challenge Components — The Lost Space Archive
+ * Chassis Silhouette, Part Builder, Flight Corridor, Depth Meter, Number Line
+ */
+
+/* ==========================================================================
+   CHALLENGE LAYOUT
+   ========================================================================== */
+
+.challenge-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 641px) {
+  .challenge-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .challenge-layout__panel--chassis {
+    flex: 0 0 55%;
+  }
+
+  .challenge-layout__panel--palette {
+    flex: 0 0 45%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .challenge-layout__panel--chassis {
+    flex: 0 0 60%;
+  }
+
+  .challenge-layout__panel--palette {
+    flex: 0 0 40%;
+  }
+}
+
+.challenge-panel {
+  width: 100%;
+}
+
+.challenge-panel__title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
+  text-align: center;
+}
+
+@media (min-width: 641px) {
+  .challenge-panel__title {
+    text-align: left;
+  }
+}
+
+/* ==========================================================================
+   CHASSIS SILHOUETTE (P3 - Part Builder)
+   ========================================================================== */
+
+.chassis-silhouette {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.chassis-silhouette__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Mobile zoom support */
+.chassis-silhouette--zoomable {
+  touch-action: pinch-zoom;
+}
+
+/* ==========================================================================
+   PARTS PALETTE (P3 - Part Builder)
+   ========================================================================== */
+
+.parts-palette {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+@media (max-width: 640px) {
+  .parts-palette {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: var(--space-md);
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .part-card {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    min-width: 140px;
+  }
+}
+
+.parts-palette__label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-sm);
+  text-align: center;
+}
+
+@media (min-width: 641px) {
+  .parts-palette__label {
+    text-align: left;
+  }
+}
+
+/* ==========================================================================
+   MATCH COLUMNS (P1 - Tool Discovery Match)
+   ========================================================================== */
+
+.match-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 641px) {
+  .match-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.match-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.match-column__title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  text-align: center;
+  padding: var(--space-sm);
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+}
+
+.match-column__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.match-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--color-bg-secondary);
+  border: 2px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease-smooth), border-color var(--dur-fast) var(--ease-smooth), color var(--dur-fast) var(--ease-smooth), transform var(--dur-fast) var(--ease-smooth), opacity var(--dur-fast) var(--ease-smooth);
+}
+
+.match-item:hover:not(.match-item--matched):not(.match-item--disabled) {
+  border-color: var(--color-accent-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.match-item:focus-visible {
+  box-shadow: var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+.match-item--selected {
+  border-color: var(--color-accent-primary);
+  background: rgba(245, 166, 35, 0.15);
+  box-shadow: var(--shadow-glow);
+}
+
+.match-item--matched {
+  border-color: var(--color-success);
+  background: rgba(34, 197, 94, 0.15);
+  cursor: default;
+}
+
+.match-item--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.match-item--shake {
+  animation: match-shake 300ms var(--ease-out);
+}
+
+@keyframes match-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-6px); }
+  80% { transform: translateX(6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .match-item--shake {
+    animation: none;
+  }
+}
+
+.match-item__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.match-item__icon svg {
+  width: 28px;
+  height: 28px;
+  color: var(--color-text-primary);
+}
+
+.match-item__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.match-item__label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.match-item__description {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.match-item__check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background: var(--color-success);
+  color: var(--color-text-inverse);
+  flex-shrink: 0;
+}
+
+.match-connector {
+  position: relative;
+  flex: 0 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.match-connector__line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-border-subtle);
+  transform: translateY(-50%);
+}
+
+.match-connector__line--connected {
+  background: var(--color-success);
+  height: 3px;
+}
+
+/* ==========================================================================
+   FLIGHT CORRIDOR (P4 - Terrain Navigator)
+   ========================================================================== */
+
+.flight-corridor {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2/1;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.flight-corridor__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.flight-corridor__path {
+  fill: none;
+  stroke: var(--color-border-subtle);
+  stroke-width: 3;
+  stroke-dasharray: 12 8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.flight-corridor__checkpoint {
+  cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease-smooth), border-color var(--dur-fast) var(--ease-smooth), transform var(--dur-fast) var(--ease-smooth), opacity var(--dur-fast) var(--ease-smooth);
+}
+
+.flight-corridor__checkpoint-ring {
+  fill: none;
+  stroke: var(--color-text-muted);
+  stroke-width: 2;
+  transition: background-color var(--dur-fast) var(--ease-smooth), border-color var(--dur-fast) var(--ease-smooth), transform var(--dur-fast) var(--ease-smooth), opacity var(--dur-fast) var(--ease-smooth);
+}
+
+.flight-corridor__checkpoint--reached .flight-corridor__checkpoint-ring {
+  stroke: var(--color-success);
+  stroke-width: 3;
+}
+
+.flight-corridor__checkpoint--current .flight-corridor__checkpoint-ring {
+  stroke: var(--color-accent-primary);
+  stroke-width: 3;
+  animation: checkpoint-pulse 1.5s var(--ease-smooth) infinite;
+}
+
+@keyframes checkpoint-pulse {
+  0%, 100% {
+    stroke-width: 3;
+    filter: drop-shadow(0 0 4px var(--color-accent-primary));
+  }
+  50% {
+    stroke-width: 4;
+    filter: drop-shadow(0 0 12px var(--color-accent-primary));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flight-corridor__checkpoint--current .flight-corridor__checkpoint-ring {
+    animation: none;
+    stroke-width: 4;
+    filter: drop-shadow(0 0 8px var(--color-accent-primary));
+  }
+}
+
+.flight-corridor__checkpoint-label {
+  fill: var(--color-text-muted);
+  font-family: var(--font-family);
+  font-size: 10px;
+  font-weight: var(--font-weight-medium);
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.flight-corridor__helicopter {
+  transition: transform var(--dur-normal) var(--ease-smooth);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flight-corridor__helicopter {
+    transition-duration: 0.01ms;
+  }
+}
+
+/* Flight Controls */
+.flight-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+}
+
+@media (min-width: 641px) {
+  .flight-controls {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.flight-controls__row {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.flight-controls__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-tertiary);
+  border: 2px solid var(--color-border-strong);
+  color: var(--color-text-primary);
+  transition: background-color var(--dur-fast) var(--ease-smooth), border-color var(--dur-fast) var(--ease-smooth), color var(--dur-fast) var(--ease-smooth), transform var(--dur-fast) var(--ease-smooth), opacity var(--dur-fast) var(--ease-smooth);
+}
+
+.flight-controls__btn:hover {
+  background: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+  color: var(--color-text-inverse);
+}
+
+.flight-controls__btn:focus-visible {
+  box-shadow: var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+.flight-controls__btn:active {
+  transform: scale(0.95);
+}
+
+.flight-controls__btn svg {
+  width: 28px;
+  height: 28px;
+}
+
+.flight-controls__btn--autopilot {
+  width: auto;
+  padding: 0 var(--space-lg);
+  gap: var(--space-sm);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+/* ==========================================================================
+   DEPTH METER (P5 - Sample Analyzer)
+   ========================================================================== */
+
+.depth-meter {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto var(--space-lg);
+}
+
+.depth-meter__track {
+  position: relative;
+  height: 48px;
+  background: var(--color-bg-primary);
+  border: 2px solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.depth-meter__fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-accent-primary), var(--color-accent-secondary));
+  border-radius: var(--radius-full);
+  transition: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: var(--space-md);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .depth-meter__fill {
+    transition-duration: 0.01ms;
+  }
+}
+
+.depth-meter__tick {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-border-strong);
+  transform: translateX(-50%);
+}
+
+.depth-meter__tick-mark {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  width: 2px;
+  height: 8px;
+  background: var(--color-text-primary);
+  transform: translateX(-50%);
+}
+
+.depth-meter__tick-label {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.depth-meter__labels {
+  margin-top: var(--space-md);
+  text-align: center;
+}
+
+.depth-meter__label {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+.dig-button {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   NUMBER LINE (P6 - Distance Comparator)
+   ========================================================================== */
+
+.number-line {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: var(--space-md);
+}
+
+@media (min-width: 641px) {
+  .number-line {
+    overflow-x: visible;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1025px) {
+  .number-line {
+    max-width: 1000px;
+  }
+}
+
+.number-line__track {
+  position: relative;
+  height: 60px;
+  min-width: 800px;
+}
+
+@media (min-width: 641px) {
+  .number-line__track {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+.number-line__line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--color-border-strong);
+  border-radius: 2px;
+  transform: translateY(-50%);
+}
+
+.number-line__ticks {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 var(--space-lg);
+}
+
+.number-line__tick {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2xs);
+}
+
+.number-line__tick-mark {
+  width: 2px;
+  height: 16px;
+  background: var(--color-text-primary);
+}
+
+.number-line__tick-value {
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.number-line__markers {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.number-line__marker {
+  position: absolute;
+  top: 50%;
+  pointer-events: auto;
+  transform: translate(-50%, -50%);
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .number-line__marker {
+    transition-duration: 0.01ms;
+  }
+}
+
+.number-line__marker-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2xs);
+  padding: var(--space-xs) var(--space-sm);
+  min-width: 60px;
+  min-height: 60px;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-secondary);
+  border: 2px solid var(--color-border-strong);
+  color: var(--color-text-primary);
+  cursor: grab;
+  transition: background-color var(--dur-fast) var(--ease-smooth), border-color var(--dur-fast) var(--ease-smooth), color var(--dur-fast) var(--ease-smooth), transform var(--dur-fast) var(--ease-smooth), opacity var(--dur-fast) var(--ease-smooth);
+}
+
+.number-line__marker-btn:hover {
+  border-color: var(--color-accent-primary);
+  box-shadow: var(--shadow-md);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.number-line__marker-btn:focus-visible {
+  box-shadow: var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+.number-line__marker-btn:active {
+  cursor: grabbing;
+}
+
+.number-line__marker-btn--placed {
+  border-color: var(--color-success);
+  background: rgba(34, 197, 94, 0.15);
+  cursor: default;
+}
+
+.number-line__marker-label {
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-bold);
+  white-space: nowrap;
+}
+
+.number-line__marker-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  background: var(--color-success);
+  color: var(--color-text-inverse);
+  font-size: var(--text-2xs);
+}
+
+/* ==========================================================================
+   CHALLENGE HEADER & FOOTER
+   ========================================================================== */
+
+.challenge-header {
+  margin-bottom: var(--space-lg);
+}
+
+.challenge-header__instruction {
+  font-size: var(--text-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+  max-width: 600px;
+  margin-bottom: var(--space-md);
+}
+
+.challenge-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.challenge-footer__feedback {
+  min-height: 48px;
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  text-align: center;
+  transition: color var(--dur-fast) var(--ease-smooth), opacity var(--dur-fast) var(--ease-smooth);
+}
+
+.challenge-footer__feedback--success {
+  color: var(--color-success);
+}
+
+.challenge-footer__feedback--error {
+  color: var(--color-error);
+}
+
+.challenge-footer__feedback--hint {
+  color: var(--color-warning);
+}
+
+/* ==========================================================================
+   HIGH CONTRAST OVERRIDES
+   ========================================================================== */
+
+@media (prefers-contrast: more) {
+  .chassis-silhouette,
+  .flight-corridor,
+  .depth-meter__track,
+  .number-line__track,
+  .match-item {
+    border-width: 3px;
+  }
+
+  .chassis-silhouette__slot-outline,
+  .flight-corridor__path,
+  .number-line__line {
+    stroke-width: 3px;
+  }
+
+  .chassis-silhouette__slot--empty .chassis-silhouette__slot-outline {
+    stroke-dasharray: 8 4;
+  }
+
+  .chassis-silhouette__slot--hint .chassis-silhouette__slot-outline {
+    animation: none;
+    stroke-width: 4px;
+  }
+
+  .match-item--selected {
+    border-width: 4px;
+    background: var(--color-bg-tertiary);
+  }
+
+  .match-item--matched {
+    border-width: 3px;
+    border-color: var(--color-success);
+  }
+
+  .flight-corridor__checkpoint-ring {
+    stroke-width: 3px;
+  }
+
+  .flight-corridor__checkpoint--current .flight-corridor__checkpoint-ring {
+    animation: none;
+    stroke-width: 4px;
+  }
+
+  .depth-meter__fill {
+    background: var(--color-accent-primary);
+  }
+
+  .number-line__marker-btn {
+    border-width: 3px;
+  }
+
+  .number-line__marker-btn--placed {
+    border-width: 4px;
+    border-color: var(--color-success);
+  }
+
+  .flight-controls__btn {
+    border-width: 3px;
+  }
+
+  .dig-button {
+    border-width: 3px;
+  }
+}

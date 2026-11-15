@@ -1,0 +1,23 @@
+/**
+ * AppShell Styles — The Lost Space Archive
+ */
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-accent-primary);
+  color: var(--color-bg-primary);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-bold);
+  z-index: var(--z-index-tooltip);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: var(--space-md);
+  outline: none;
+  box-shadow: var(--focus-ring);
+}

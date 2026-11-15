@@ -1,0 +1,160 @@
+/**
+ * Starfield — app-wide drifting night sky.
+ * Sits behind every screen (z-index -1 in the root stacking context).
+ * Only transform/opacity are animated so it stays on the compositor.
+ */
+
+.starfield {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+}
+
+/* Each layer is one tile larger than the viewport and moves exactly one
+   tile per loop, so the repeat is seamless. */
+.starfield__layer {
+  --tile: 240px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% + var(--tile));
+  height: calc(100% + var(--tile));
+  background-repeat: repeat;
+  background-size: var(--tile) var(--tile);
+  will-change: transform;
+  animation: starfield-drift var(--drift-duration, 120s) linear infinite;
+}
+
+.starfield__layer--far {
+  --tile: 190px;
+  --drift-duration: 150s;
+  opacity: 0.55;
+  background-image:
+    radial-gradient(1px 1px at 12% 22%, #fff8dd 50%, transparent 75%),
+    radial-gradient(1px 1px at 63% 8%, #cfc4ff 50%, transparent 75%),
+    radial-gradient(1px 1px at 82% 71%, #fff8dd 50%, transparent 75%),
+    radial-gradient(1px 1px at 34% 57%, #d9e2ff 50%, transparent 75%),
+    radial-gradient(1px 1px at 51% 92%, #fff8dd 50%, transparent 75%);
+}
+
+.starfield__layer--mid {
+  --tile: 310px;
+  --drift-duration: 105s;
+  opacity: 0.7;
+  background-image:
+    radial-gradient(1.5px 1.5px at 18% 38%, #fff1c7 50%, transparent 75%),
+    radial-gradient(1.4px 1.4px at 71% 24%, #d4c3ff 50%, transparent 75%),
+    radial-gradient(1.6px 1.6px at 44% 81%, #fff8dd 50%, transparent 75%),
+    radial-gradient(1.3px 1.3px at 92% 63%, #ffd9a8 50%, transparent 75%);
+}
+
+.starfield__layer--near {
+  --tile: 470px;
+  --drift-duration: 70s;
+  opacity: 0.85;
+  background-image:
+    radial-gradient(2px 2px at 27% 16%, #fff4d9 50%, transparent 75%),
+    radial-gradient(2.2px 2.2px at 76% 52%, #ffe39a 50%, transparent 75%),
+    radial-gradient(1.8px 1.8px at 9% 79%, #e3d6ff 50%, transparent 75%);
+  animation:
+    starfield-drift var(--drift-duration) linear infinite,
+    starfield-breathe 7s ease-in-out infinite alternate;
+}
+
+@keyframes starfield-drift {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(calc(var(--tile) * -1), calc(var(--tile) * -1), 0); }
+}
+
+@keyframes starfield-breathe {
+  from { opacity: 0.85; }
+  to { opacity: 0.55; }
+}
+
+/* Storybook four-point sparkles */
+.starfield__sparkle {
+  --sparkle-scale: 1;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  fill: #ffe9b0;
+  filter: drop-shadow(0 0 4px rgba(255, 226, 150, 0.75));
+  opacity: 0;
+  transform: scale(calc(var(--sparkle-scale) * 0.4));
+  animation: starfield-sparkle 6.5s ease-in-out infinite;
+}
+
+.starfield__sparkle:nth-of-type(3n) { fill: #e0d2ff; filter: drop-shadow(0 0 4px rgba(208, 190, 255, 0.7)); }
+
+@keyframes starfield-sparkle {
+  0%, 100% { opacity: 0; transform: scale(calc(var(--sparkle-scale) * 0.4)) rotate(0deg); }
+  45% { opacity: 0.95; transform: scale(var(--sparkle-scale)) rotate(25deg); }
+  60% { opacity: 0.7; transform: scale(calc(var(--sparkle-scale) * 0.85)) rotate(35deg); }
+}
+
+/* Rare shooting stars: visible for a short moment of a long loop. */
+.starfield__shooting {
+  position: absolute;
+  width: 110px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255, 244, 217, 0), rgba(255, 244, 217, 0.95));
+  opacity: 0;
+  transform-origin: right center;
+}
+
+.starfield__shooting::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff4d9;
+  box-shadow: 0 0 10px rgba(255, 244, 217, 0.9);
+}
+
+.starfield__shooting--one {
+  top: 16%;
+  left: 62%;
+  animation: starfield-shoot-one 13s ease-in 4s infinite;
+}
+
+.starfield__shooting--two {
+  top: 48%;
+  left: 18%;
+  animation: starfield-shoot-two 19s ease-in 11s infinite;
+}
+
+@keyframes starfield-shoot-one {
+  0% { opacity: 0; transform: rotate(152deg) translateX(0); }
+  2% { opacity: 1; }
+  8% { opacity: 0; transform: rotate(152deg) translateX(320px); }
+  100% { opacity: 0; transform: rotate(152deg) translateX(320px); }
+}
+
+@keyframes starfield-shoot-two {
+  0% { opacity: 0; transform: rotate(160deg) translateX(0); }
+  2% { opacity: 0.9; }
+  7% { opacity: 0; transform: rotate(160deg) translateX(260px); }
+  100% { opacity: 0; transform: rotate(160deg) translateX(260px); }
+}
+
+/* Reduced motion: a still, calm sky. */
+@media (prefers-reduced-motion: reduce) {
+  .starfield__layer,
+  .starfield__sparkle { animation: none !important; }
+  .starfield__sparkle { opacity: 0.6; transform: scale(var(--sparkle-scale)); }
+  .starfield__shooting { display: none; }
+}
+
+html.reduced-motion .starfield__layer,
+html.reduced-motion .starfield__sparkle { animation: none !important; }
+html.reduced-motion .starfield__sparkle { opacity: 0.6; transform: scale(var(--sparkle-scale)); }
+html.reduced-motion .starfield__shooting { display: none; }
+
+html.high-contrast .starfield { display: none; }

@@ -1,0 +1,33 @@
+.story-sparkle {
+  display: inline-block;
+  flex: none;
+  vertical-align: middle;
+  overflow: visible;
+  filter: drop-shadow(0 0 6px rgba(255, 209, 90, .45));
+  animation: story-sparkle-twinkle 2.8s ease-in-out infinite;
+}
+
+.story-sparkle__small {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: story-sparkle-small 2.8s ease-in-out infinite;
+  animation-delay: inherit;
+}
+
+@keyframes story-sparkle-twinkle {
+  0%, 100% { scale: 1; rotate: 0deg; }
+  50% { scale: 1.12; rotate: 10deg; }
+}
+
+@keyframes story-sparkle-small {
+  0%, 100% { opacity: 1; scale: 1; }
+  50% { opacity: .45; scale: .7; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story-sparkle,
+  .story-sparkle__small { animation: none; }
+}
+
+html.reduced-motion .story-sparkle,
+html.reduced-motion .story-sparkle__small { animation: none; }

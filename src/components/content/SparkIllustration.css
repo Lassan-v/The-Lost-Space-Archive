@@ -1,0 +1,29 @@
+.spark-illustration {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.spark-illustration[data-pose='idle'] {
+  animation: spark-idle-drift 4.5s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+}
+
+@keyframes spark-idle-drift {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.reduced-motion .spark-illustration {
+  animation: none;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spark-illustration {
+    animation: none;
+    transform: none;
+  }
+}

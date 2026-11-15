@@ -1,0 +1,495 @@
+/**
+ * ChallengeScreen Styles — The Lost Space Archive
+ */
+
+.challenge-screen {
+  min-height: calc(100vh - var(--header-height));
+}
+
+.challenge-screen__content {
+  max-width: var(--container-desktop);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md) var(--space-2xl);
+}
+
+.mission-activity {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.mission-activity__mission-character {
+  display: grid;
+  grid-template-columns: minmax(88px, 128px) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-md);
+  width: 100%;
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.mission-activity__mission-illustration {
+  width: 100%;
+  aspect-ratio: 6 / 5;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-primary);
+  opacity: 1;
+  transition: opacity var(--dur-fast) var(--ease-out);
+
+  @starting-style {
+    opacity: 0.82;
+  }
+}
+
+.mission-activity__mission-copy h2,
+.mission-activity__mission-copy p {
+  margin: 0;
+}
+
+.mission-activity__mission-copy h2 {
+  margin-bottom: var(--space-xs);
+  font-size: var(--text-lg);
+  text-align: center;
+  text-wrap: balance;
+}
+
+.mission-activity__mission-copy p {
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+}
+
+.mission-activity__guide,
+.mission-activity__response {
+  margin-bottom: var(--space-md);
+  padding: var(--space-md);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-secondary);
+}
+
+.mission-activity__checkpoints {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mission-activity__checkpoints li {
+  flex: 1 1 140px;
+  padding: var(--space-sm);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-primary);
+}
+
+.mission-activity__flight-path {
+  display: block;
+  width: min(100%, 560px);
+  height: auto;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.mission-activity__flight-track {
+  fill: none;
+  stroke: var(--color-border-strong);
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.mission-activity__flight-node {
+  fill: var(--color-bg-primary);
+  stroke: var(--color-border-strong);
+  stroke-width: 4;
+  transition: fill var(--dur-fast) var(--ease-out), stroke var(--dur-fast) var(--ease-out);
+}
+
+.mission-activity__flight-node-core {
+  fill: var(--color-border-strong);
+}
+
+.mission-activity__flight-path g.is-complete .mission-activity__flight-node,
+.mission-activity__flight-path g.is-current .mission-activity__flight-node {
+  fill: var(--color-accent-primary);
+  stroke: var(--color-text-primary);
+}
+
+.mission-activity__flight-path g.is-complete .mission-activity__flight-node-core,
+.mission-activity__flight-path g.is-current .mission-activity__flight-node-core {
+  fill: var(--color-text-inverse);
+}
+
+.mission-activity__checkpoints li.is-complete {
+  border-color: var(--color-success);
+  background: var(--color-bg-secondary);
+  box-shadow: inset 0 0 0 1px var(--color-success);
+}
+
+.mission-activity__checkpoints li.is-current {
+  border-color: var(--color-accent-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.mission-activity__samples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.mission-activity__samples > button {
+  flex: 1 1 180px;
+  min-height: var(--touch-target-preferred);
+}
+
+.mission-activity__route-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.mission-activity__route-record {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  gap: var(--space-sm);
+  width: 100%;
+  margin: 0;
+}
+
+.mission-activity__route-record > div {
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-secondary);
+}
+
+.mission-activity__route-record dt {
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+}
+
+.mission-activity__route-record dd {
+  margin: var(--space-2xs) 0 0;
+  color: var(--color-text-primary);
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  font-variant-numeric: tabular-nums;
+}
+
+.mission-route-card {
+  display: grid;
+  align-content: start;
+  gap: var(--space-xs);
+  min-width: 0;
+  min-height: 150px;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
+}
+
+.mission-route-card:hover {
+  border-color: var(--color-accent-primary);
+}
+
+.mission-route-card:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.mission-route-card.is-selected {
+  border-color: var(--color-accent-primary);
+  box-shadow: inset 0 0 0 2px var(--color-accent-primary);
+}
+
+.mission-route-card strong {
+  font-size: var(--text-lg);
+  line-height: var(--line-height-tight);
+}
+
+.mission-route-card span {
+  line-height: var(--line-height-normal);
+  overflow-wrap: anywhere;
+}
+
+.mission-route-card__outcome {
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+}
+
+.mission-route-figure {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-primary);
+}
+
+.mission-route-figure__map {
+  display: block;
+  width: 100%;
+  color: var(--color-text-primary);
+}
+
+.mission-route-figure__route-shadow {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: mission-route-draw 260ms var(--ease-out) forwards;
+}
+
+.mission-route-figure__route {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: mission-route-draw 240ms var(--ease-out) forwards;
+}
+
+@keyframes mission-route-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+.mission-route-figure figcaption {
+  margin-top: var(--space-xs);
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+}
+
+.mission-activity__schematic-note {
+  width: 100%;
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+}
+
+.reduced-motion .mission-route-figure__route {
+  animation: none;
+  stroke-dashoffset: 0;
+}
+
+.reduced-motion .mission-route-figure__route-shadow {
+  animation: none;
+  stroke-dashoffset: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mission-route-figure__route { animation: none; stroke-dashoffset: 0; }
+  .mission-route-figure__route-shadow { animation: none; stroke-dashoffset: 0; }
+  .mission-route-card { transition: none; }
+}
+
+.mission-activity__feedback {
+  flex: 1 0 100%;
+  min-height: 1.5em;
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+.mission-activity__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.mission-activity__item p {
+  flex: 1 0 100%;
+  margin: 0;
+}
+
+.mission-activity > p {
+  flex: 1 0 100%;
+  margin: 0;
+}
+
+.mission-activity > button,
+.mission-activity__item > button {
+  max-width: 100%;
+  white-space: normal;
+}
+
+.challenge-screen__header {
+  margin-bottom: var(--space-xl);
+}
+
+.challenge-screen__title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.challenge-screen__main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 641px) {
+  .challenge-screen__main {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.challenge-screen__panel {
+  flex: 1;
+  min-width: 0;
+}
+
+.challenge-screen__panel-title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
+  text-align: center;
+}
+
+@media (min-width: 641px) {
+  .challenge-screen__panel-title {
+    text-align: left;
+  }
+}
+
+/* P3 Specific Layout */
+.challenge-p3__chassis-panel {
+  order: 1;
+}
+
+.challenge-p3__palette-panel {
+  order: 2;
+}
+
+@media (min-width: 641px) {
+  .challenge-p3__chassis-panel {
+    flex: 0 0 55%;
+    order: 0;
+  }
+
+  .challenge-p3__palette-panel {
+    flex: 0 0 45%;
+    order: 1;
+  }
+}
+
+@media (min-width: 1025px) {
+  .challenge-p3__chassis-panel {
+    flex: 0 0 60%;
+  }
+
+  .challenge-p3__palette-panel {
+    flex: 0 0 40%;
+  }
+}
+
+.challenge-screen__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border-subtle);
+  width: 100%;
+}
+
+.challenge-screen__feedback {
+  min-height: 48px;
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  text-align: center;
+  transition: color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), opacity var(--dur-fast) var(--ease-out);
+  width: 100%;
+  max-width: 600px;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+}
+
+.challenge-screen__feedback--success {
+  color: var(--color-success);
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid var(--color-success);
+}
+
+.challenge-screen__feedback--error {
+  color: var(--color-error);
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid var(--color-error);
+}
+
+.challenge-screen__feedback--hint {
+  color: var(--color-warning);
+  background: rgba(245, 166, 35, 0.15);
+  border: 1px solid var(--color-warning);
+}
+
+.challenge-screen__station-btn {
+  width: 100%;
+  max-width: 320px;
+}
+
+@media (min-width: 641px) {
+  .challenge-screen__footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .challenge-screen__feedback {
+    text-align: left;
+    flex: 1;
+  }
+
+  .challenge-screen__station-btn {
+    width: auto;
+  }
+}
+
+/* Mobile chassis zoom */
+.chassis-silhouette--mobile {
+  touch-action: pinch-zoom;
+  transform-origin: center center;
+}
+
+/* High Contrast Overrides */
+@media (prefers-contrast: more) {
+  .challenge-screen__panel {
+    border: 3px solid var(--color-border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+  }
+
+  .challenge-screen__feedback {
+    border-width: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mission-activity__mission-character {
+    grid-template-columns: minmax(72px, 96px) minmax(0, 1fr);
+    gap: var(--space-sm);
+  }
+
+  .mission-activity__mission-copy h2 {
+    font-size: var(--text-base);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mission-activity__flight-node,
+  .challenge-screen__feedback {
+    transition: color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), opacity var(--dur-fast) var(--ease-out);
+  }
+}

@@ -1,0 +1,324 @@
+/**
+ * Design Tokens — The Lost Space Archive
+ * Based on VISUAL_DESIGN_SYSTEM.md, SCREEN_SPECS.md, and RESPONSIVE_NOTES.md
+ * All values as CSS Custom Properties for theming support
+ */
+
+:root {
+  /* Phase 3 storybook palette: applied progressively to reviewed screens. */
+  --storybook-navy: #111D38;
+  --storybook-blue: #273C67;
+  --storybook-purple: #9270D9;
+  --storybook-lavender: #C7A8EE;
+  --storybook-gold: #F7AE32;
+  --storybook-yellow: #F7D779;
+  --storybook-paper: #FFF4D9;
+  --storybook-ink: #1D2440;
+  /* Semantic field-journal roles shared by the shell, reading surfaces and footer. */
+  --color-archive-night: #10152F;
+  --color-archive-raised: #1C2446;
+  --color-field-paper: #FFF6DF;
+  --color-field-ink: #202541;
+  --color-discovery-warm: #F4BD55;
+  --color-guide-light: #BBA2ED;
+  --color-archive-divider: rgba(236, 222, 255, 0.42);
+  --color-archive-body: #F8F3E5;
+  --color-archive-link: #E8E7F0;
+  --color-archive-link-hover: #FFE08C;
+  --color-footer-ink: #F7F0DC;
+  --color-footer-heading: #FFF4D9;
+  --color-footer-secondary: #E4D8FA;
+  --color-footer-divider: rgba(205, 190, 235, 0.34);
+  --color-shell-surface: rgba(15, 20, 47, 0.96);
+  --color-shell-control: rgba(39, 45, 82, 0.84);
+  --color-shell-control-hover: #37345F;
+  /* Scene art direction: distinct light and terrain for each expedition. */
+  --scene-cabin-ink: #17153F;
+  --scene-cabin-violet: #6C45B5;
+  --scene-cabin-glass: #282868;
+  --scene-cabin-gold: #FFD15A;
+  --scene-mars-violet: #5B347F;
+  --scene-mars-coral: #F07B62;
+  --scene-mars-orange: #F28A54;
+  --scene-mars-red: #B94C63;
+  --scene-mars-gold: #FFC45A;
+  --scene-moon-indigo: #211C5C;
+  --scene-moon-violet: #5B4D9B;
+  --scene-moon-lavender: #B6A9D9;
+  --scene-moon-silver: #D7CEEF;
+  --scene-moon-gold: #FFD15A;
+  --space-story-footer: clamp(24px, 4vw, 42px);
+  --space-story-gutter: clamp(18px, 5vw, 72px);
+  --space-story-column: clamp(22px, 4vw, 56px);
+  --radius-story-control: 14px;
+  --radius-story-panel: 24px 24px 24px 7px;
+  --shadow-story-header: 0 8px 26px rgba(5, 8, 24, 0.2);
+  --font-family-story-display: 'DynaPuff', 'Trebuchet MS', system-ui, sans-serif;
+  --font-family-story-accent: 'Chewy', 'Trebuchet MS', system-ui, sans-serif;
+  --font-family-story-body: 'Nunito', system-ui, -apple-system, sans-serif;
+
+  /* ==========================================================================
+     COLOR SYSTEM
+     ========================================================================== */
+
+  /* Foundation (Deep Space Navy & Atmospheric Indigo) */
+  --color-bg-primary: #0B1426;        /* Deep navy background */
+  --color-bg-secondary: #14213D;      /* Elevated cards and panels */
+  --color-bg-tertiary: #1E3A5F;       /* Interactive cards / hovered surfaces */
+  --color-surface-overlay: rgba(11, 20, 38, 0.85); /* Modal backdrop */
+
+  /* Accents (Warm Discovery Yellow & Orange, Nebula Purple) */
+  --color-accent-primary: #F5A623;    /* Warm yellow/orange (Primary CTA, stars, highlights) */
+  --color-accent-secondary: #E85D04;  /* Deep orange (Secondary highlights, Mars accents) */
+  --color-accent-purple: #8B5CF6;     /* Nebula purple (Station lights, magical memory glow) */
+  --color-accent-teal: #06B6D4;       /* Moon / tech glow accents */
+
+  /* Typography & Text */
+  --color-text-primary: #FFFFFF;      /* Primary headings and body text on dark */
+  --color-text-secondary: #CBD5E1;    /* Supporting body text and descriptions */
+  --color-text-muted: #94A3B8;        /* Captions and timestamps */
+  --color-text-inverse: #0B1426;      /* Text on bright buttons */
+
+  /* Interactive States */
+  --color-interactive: #F5A623;       /* Primary action fill */
+  --color-interactive-hover: #FFB84D; /* Hover fill */
+  --color-interactive-active: #D48B00;/* Active / pressed fill */
+  --color-interactive-disabled: #334155; /* Disabled fill */
+  --color-text-disabled: #64748B;     /* Disabled text */
+
+  /* Feedback & Semantic */
+  --color-success: #22C55E;           /* Success / verified fact badge */
+  --color-warning: #F5A623;           /* Caution / uncertain data badge */
+  --color-error: #EF4444;             /* Error / alert state */
+  --color-info: #3B82F6;              /* Information indicator */
+
+  /* Focus & Accessibility */
+  --color-focus: #38BDF8;             /* Sky blue focus ring — highly visible on navy */
+  --color-focus-ring: 0 0 0 3px var(--color-focus);
+
+  /* Borders & Dividers */
+  --color-border-subtle: #1E3A5F;     /* Card borders */
+  --color-border-strong: #334155;     /* Active borders / dividers */
+
+  /* ==========================================================================
+     TYPOGRAPHY
+     ========================================================================== */
+
+  --font-family: var(--font-family-story-body);
+
+  --text-xs: 0.75rem;     /* 12px - Badges, captions, metadata */
+  --text-sm: 0.875rem;    /* 14px - Button text, secondary labels */
+  --text-base: 1rem;      /* 16px - Standard body text (Minimum for readability) */
+  --text-lg: 1.125rem;    /* 18px - Prominent body / instructions */
+  --text-xl: 1.25rem;     /* 20px - Card titles / small headers */
+  --text-2xl: 1.5rem;     /* 24px - Section headers */
+  --text-3xl: 2rem;       /* 32px - Major screen titles */
+  --text-4xl: 2.5rem;     /* 40px - Hero banners / welcome screen */
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* ==========================================================================
+     SPACING SCALE
+     ========================================================================== */
+
+  --space-3xs: 2px;
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+
+  /* ==========================================================================
+     BORDER RADIUS
+     ========================================================================== */
+
+  --radius-sm: 8px;       /* Small tags, pills */
+  --radius-md: 12px;      /* Standard buttons, input fields */
+  --radius-lg: 20px;      /* Cards, panels, modal windows */
+  --radius-full: 9999px;  /* Circular avatars, floating action buttons */
+
+  /* ==========================================================================
+     ELEVATION & SHADOWS
+     ========================================================================== */
+
+  --shadow-sm: 0 2px 8px rgba(11, 20, 38, 0.4);
+  --shadow-md: 0 4px 16px rgba(11, 20, 38, 0.6);
+  --shadow-lg: 0 8px 32px rgba(11, 20, 38, 0.8);
+  --shadow-glow: 0 0 20px rgba(245, 166, 35, 0.3);    /* Warm yellow highlight glow */
+  --shadow-purple-glow: 0 0 24px rgba(139, 92, 246, 0.35); /* Nebula glow */
+
+  /* ==========================================================================
+     MOTION TOKENS
+     ========================================================================== */
+
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);       /* Smooth deceleration */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);         /* Material standard */
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);              /* Deceleration */
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);               /* Acceleration */
+
+  --dur-instant: 50ms;
+  --dur-fast: 150ms;
+  --dur-normal: 300ms;
+  --dur-slow: 500ms;
+  --dur-slower: 800ms;
+
+  --dur-reduced: 0.01ms;
+
+  /* ==========================================================================
+     BREAKPOINTS
+     ========================================================================== */
+
+  --bp-mobile: 640px;      /* ≤640px */
+  --bp-tablet: 1024px;     /* 641px–1024px */
+  --bp-desktop: 1025px;    /* >1024px */
+
+  /* Container max-widths */
+  --container-mobile: 100%;
+  --container-tablet: 768px;
+  --container-desktop: 1360px;
+
+  /* Header height */
+  --header-height-mobile: 56px;
+  --header-height-tablet: 60px;
+  --header-height-desktop: 64px;
+  --header-height: var(--header-height-mobile);
+
+  /* ==========================================================================
+     TOUCH TARGETS
+     ========================================================================== */
+
+  --touch-target-min: 44px;   /* WCAG AA minimum */
+  --touch-target-preferred: 56px; /* Child-friendly preferred */
+
+  /* ==========================================================================
+     Z-INDEX SCALE
+     ========================================================================== */
+
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-toast: 600;
+  --z-tooltip: 700;
+}
+
+.high-contrast {
+  --color-bg-primary: #000000;
+  --color-bg-secondary: #000000;
+  --color-bg-tertiary: #1a1a1a;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #ffffff;
+  --color-text-muted: #e6e6e6;
+  --color-border-subtle: #ffffff;
+  --color-border-strong: #ffffff;
+  --color-focus: #ffff00;
+}
+
+/* ==========================================================================
+   RESPONSIVE TOKEN OVERRIDES
+   ========================================================================== */
+
+@media (min-width: 641px) {
+  :root {
+    /* Typography adjustments for tablet */
+    --text-base: 1rem;      /* 16px */
+    --text-lg: 1.125rem;    /* 18px */
+    --text-xl: 1.375rem;    /* 22px */
+    --text-2xl: 1.75rem;    /* 28px */
+    --text-3xl: 2.25rem;    /* 36px */
+    --text-4xl: 3rem;       /* 48px */
+
+    /* Spacing adjustments for tablet */
+    --space-md: 20px;
+    --space-lg: 28px;
+    --space-xl: 40px;
+    --space-2xl: 56px;
+    --space-3xl: 72px;
+
+    /* Header height */
+    --header-height: var(--header-height-tablet);
+  }
+}
+
+@media (min-width: 1025px) {
+  :root {
+    /* Typography adjustments for desktop */
+    --text-base: 1.0625rem; /* 17px */
+    --text-lg: 1.25rem;     /* 20px */
+    --text-xl: 1.5rem;      /* 24px */
+    --text-2xl: 2rem;       /* 32px */
+    --text-3xl: 2.5rem;     /* 40px */
+    --text-4xl: 3.5rem;     /* 56px */
+
+    /* Spacing adjustments for desktop */
+    --space-md: 24px;
+    --space-lg: 32px;
+    --space-xl: 48px;
+    --space-2xl: 64px;
+    --space-3xl: 96px;
+
+    /* Header height */
+    --header-height: var(--header-height-desktop);
+  }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY OVERRIDES
+   ========================================================================== */
+
+/* High Contrast Mode */
+@media (prefers-contrast: more) {
+  :root {
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #E0E0E0;
+    --color-text-muted: #CCCCCC;
+    --color-bg-primary: #000000;
+    --color-bg-secondary: #1A1A1A;
+    --color-bg-tertiary: #2A2A2A;
+    --color-interactive: #FFFF00;
+    --color-interactive-hover: #FFFF33;
+    --color-interactive-active: #CCCC00;
+    --color-interactive-disabled: #666666;
+    --color-border-strong: #FFFFFF;
+    --color-border-subtle: #888888;
+    --color-focus: #FFFF00;
+    --shadow-sm: none;
+    --shadow-md: none;
+    --shadow-lg: none;
+    --shadow-glow: none;
+    --shadow-purple-glow: none;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-instant: var(--dur-reduced);
+    --dur-fast: var(--dur-reduced);
+    --dur-normal: var(--dur-reduced);
+    --dur-slow: var(--dur-reduced);
+    --dur-slower: var(--dur-reduced);
+  }
+}
+
+/* ==========================================================================
+   CONTAINER QUERIES SUPPORT (for future component-level responsiveness)
+   ========================================================================== */
+
+@supports (container-type: inline-size) {
+  .container-responsive {
+    container-type: inline-size;
+  }
+}

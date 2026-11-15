@@ -1,0 +1,510 @@
+/**
+ * Card Components — The Lost Space Archive
+ * Fact cards, dossier cards, character cards, challenge cards
+ */
+
+/* ==========================================================================
+   FACT CARD
+   ========================================================================== */
+
+.fact-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  max-width: 560px;
+  transition: background-color var(--dur-fast) var(--ease-smooth), border-color var(--dur-fast) var(--ease-smooth), color var(--dur-fast) var(--ease-smooth), transform var(--dur-fast) var(--ease-smooth), opacity var(--dur-fast) var(--ease-smooth);
+}
+
+.fact-card:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.fact-card__text {
+  font-size: var(--text-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.fact-card__source {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.fact-card__source-label {
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fact-card__source-link {
+  color: var(--color-accent-primary);
+  font-weight: var(--font-weight-medium);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.fact-card__source-link:hover {
+  color: var(--color-interactive-hover);
+}
+
+.fact-card__source-id {
+  font-family: monospace;
+  color: var(--color-text-muted);
+}
+
+/* Term definitions in fact card */
+.fact-card__terms {
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.fact-card__terms-summary {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-accent-primary);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.fact-card__terms-summary::-webkit-details-marker {
+  display: none;
+}
+
+.fact-card__terms-summary::before {
+  content: "?";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25em;
+  height: 1.25em;
+  border-radius: var(--radius-full);
+  background: var(--color-accent-primary);
+  color: var(--color-text-inverse);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-bold);
+}
+
+.fact-card__terms-list {
+  display: grid;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+  padding-left: var(--space-lg);
+}
+
+.fact-card__term {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.fact-card__term-name {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  min-width: 80px;
+}
+
+.fact-card__term-definition {
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+}
+
+/* ==========================================================================
+   CHARACTER CARD / ILLUSTRATION CONTAINER
+   ========================================================================== */
+
+.character-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.character-card__illustration {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.character-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(11, 20, 38, 0.3) 50%,
+    rgba(11, 20, 38, 0.7) 100%
+  );
+  pointer-events: none;
+}
+
+.character-card__label {
+  position: absolute;
+  bottom: var(--space-md);
+  left: var(--space-md);
+  right: var(--space-md);
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================================================
+   DOSSIER CARD (for mission selection)
+   ========================================================================== */
+
+.dossier-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: background-color var(--dur-fast) var(--ease-smooth), border-color var(--dur-fast) var(--ease-smooth), color var(--dur-fast) var(--ease-smooth), transform var(--dur-fast) var(--ease-smooth), opacity var(--dur-fast) var(--ease-smooth);
+  text-decoration: none;
+  color: inherit;
+}
+
+.dossier-card:hover {
+  border-color: var(--color-accent-primary);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+.dossier-card:focus-visible {
+  box-shadow: var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+.dossier-card__image {
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  background: var(--color-bg-tertiary);
+}
+
+.dossier-card__content {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.dossier-card__title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.dossier-card__mission {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.dossier-card__description {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-normal);
+  flex: 1;
+}
+
+.dossier-card__status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-2xs) var(--space-sm);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-bold);
+  margin-top: var(--space-sm);
+  align-self: flex-start;
+}
+
+.dossier-card__status--active {
+  background: rgba(34, 197, 94, 0.2);
+  color: var(--color-success);
+  border: 1px solid var(--color-success);
+}
+
+.dossier-card__status--locked {
+  background: rgba(148, 163, 184, 0.2);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border-strong);
+}
+
+.dossier-card__status--completed {
+  background: rgba(245, 166, 35, 0.2);
+  color: var(--color-accent-primary);
+  border: 1px solid var(--color-accent-primary);
+}
+
+/* ==========================================================================
+   CHALLENGE PART CARD (P3 - Part Builder)
+   ========================================================================== */
+
+.part-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: var(--color-bg-secondary);
+  border: 2px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  min-height: 140px;
+  min-width: 120px;
+  transition: background-color var(--dur-fast) var(--ease-smooth), border-color var(--dur-fast) var(--ease-smooth), color var(--dur-fast) var(--ease-smooth), transform var(--dur-fast) var(--ease-smooth), opacity var(--dur-fast) var(--ease-smooth);
+  cursor: grab;
+}
+
+.part-card:hover:not(.part-card--placed):not(.part-card--dragging) {
+  border-color: var(--color-accent-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.part-card:focus-visible {
+  box-shadow: var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+.part-card--dragging {
+  opacity: 0.8;
+  transform: rotate(3deg);
+  cursor: grabbing;
+  z-index: var(--z-dropdown);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .part-card--dragging {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.part-card--placed {
+  opacity: 0.6;
+  border-color: var(--color-success);
+  cursor: default;
+  pointer-events: none;
+}
+
+.part-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.part-card__icon svg {
+  width: 32px;
+  height: 32px;
+  color: var(--color-text-primary);
+}
+
+.part-card__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2xs);
+}
+
+.part-card__label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.part-card__job {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+}
+
+.part-card__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background: var(--color-success);
+  color: var(--color-text-inverse);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-bold);
+}
+
+/* ==========================================================================
+   SIMULATION BANNER
+   ========================================================================== */
+
+.simulation-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: rgba(245, 166, 35, 0.15);
+  border: 1px solid color-mix(in srgb, var(--color-warning), transparent 45%);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-lg);
+}
+
+.simulation-banner__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--color-warning);
+}
+
+.simulation-banner__content {
+  flex: 1;
+}
+
+.simulation-banner__text {
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-normal);
+  margin-bottom: var(--space-xs);
+}
+
+.simulation-banner__sources {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.simulation-banner__sources-summary {
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-accent-primary);
+  cursor: pointer;
+  list-style: none;
+}
+
+.simulation-banner__sources-summary::-webkit-details-marker {
+  display: none;
+}
+
+.simulation-banner__sources-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  margin-top: var(--space-xs);
+  padding-left: var(--space-lg);
+}
+
+.simulation-banner__source-link {
+  font-size: var(--text-xs);
+  color: var(--color-accent-primary);
+  font-family: monospace;
+}
+
+.simulation-banner__source-link:hover {
+  text-decoration: underline;
+}
+
+/* Variant for challenge screens */
+.simulation-banner--challenge {
+  background: rgba(245, 166, 35, 0.1);
+  border-left-color: var(--color-warning);
+}
+
+/* ==========================================================================
+   INSTRUCTION TEXT
+   ========================================================================== */
+
+.instruction-text {
+  font-size: var(--text-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+  max-width: 600px;
+  margin-bottom: var(--space-lg);
+}
+
+.instruction-text__definitions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+  padding: var(--space-md);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.instruction-text__definition {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xs);
+  font-size: var(--text-sm);
+}
+
+.instruction-text__definition-term {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent-primary);
+}
+
+.instruction-text__definition-text {
+  color: var(--color-text-secondary);
+}
+
+/* ==========================================================================
+   HIGH CONTRAST OVERRIDES
+   ========================================================================== */
+
+@media (prefers-contrast: more) {
+  .fact-card,
+  .character-card,
+  .dossier-card,
+  .part-card,
+  .simulation-banner,
+  .instruction-text__definitions {
+    border-width: 3px;
+  }
+
+  .fact-card:hover {
+    border-color: var(--color-border-strong);
+    box-shadow: none;
+  }
+
+  .dossier-card:hover {
+    border-color: var(--color-accent-primary);
+    box-shadow: none;
+    transform: none;
+  }
+
+  .part-card:hover:not(.part-card--placed):not(.part-card--dragging) {
+    border-color: var(--color-accent-primary);
+    box-shadow: none;
+    transform: none;
+  }
+
+  .simulation-banner {
+    border-width: 2px;
+    background: color-mix(in srgb, var(--color-warning), var(--color-bg-secondary) 85%);
+  }
+
+  .part-card--placed {
+    border-color: var(--color-success);
+    border-width: 3px;
+  }
+}

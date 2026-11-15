@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Development-only character art and hardware accuracy review for The Lost Space Archive." />
+    <title>Character Showcase | The Lost Space Archive</title>
+    <style>
+      :root { color-scheme: light; --ink:#172744; --navy:#111d38; --blue:#273c67; --purple:#9270d9; --lav:#c7a8ee; --gold:#f7ae32; --sun:#f7d779; --paper:#fff4d9; --body:#273c67; }
+      * { box-sizing:border-box; }
+      body { margin:0; color:var(--ink); background:#f1e7cf; font:16px/1.55 Nunito,system-ui,sans-serif; }
+      main { width:min(1360px,100%); margin:0 auto; padding:28px clamp(16px,4vw,48px) 64px; }
+      h1,h2,h3 { font-family:DynaPuff,system-ui,sans-serif; line-height:1.18; }
+      h1 { max-width:18ch; margin:0; color:var(--paper); font-size:clamp(2.2rem,5vw,4rem); }
+      h2 { margin:0 0 14px; color:var(--navy); font-size:clamp(1.5rem,3vw,2.25rem); }
+      h3 { margin:0; color:var(--blue); font-size:1.35rem; }
+      p { margin:.45rem 0; }
+      .hero { padding:clamp(22px,5vw,48px); border:2px solid var(--lav); border-radius:32px 32px 32px 10px; background:linear-gradient(135deg,var(--blue),var(--navy)); color:var(--paper); }
+      .hero p { max-width:72ch; color:#fff4d9; }
+      .hero a { color:var(--sun); }
+      section { margin-top:40px; }
+      .lineup { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:10px; }
+      .lineup figure,.character-card { margin:0; border:1px solid #d9c9a8; border-radius:20px 20px 20px 7px; background:var(--paper); box-shadow:0 8px 22px #17274416; }
+      .lineup figure { padding:10px 8px 12px; text-align:center; }
+      .lineup svg { display:block; width:100%; height:130px; }
+      figcaption { margin-top:3px; color:var(--navy); font-weight:800; }
+      .character-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+      .character-card { overflow:hidden; }
+      .character-card__heading { display:flex; align-items:baseline; justify-content:space-between; gap:12px; padding:16px 18px 8px; }
+      .character-card__kind { color:#4d5b74; font-size:.87rem; text-align:right; }
+      .pose-sheet { display:block; width:100%; height:auto; aspect-ratio:6/5; background:var(--paper); }
+      .pose-labels { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px 12px; padding:0 18px 12px; color:#33496f; font-size:.9rem; }
+      .pose-labels span::before { content:'• '; color:#8a62cf; font-weight:900; }
+      .character-copy { padding:0 18px 18px; }
+      .character-copy strong { color:var(--navy); }
+      .notes { border-left:5px solid var(--gold); padding:8px 0 8px 14px; }
+      .spark-card { grid-column:1/-1; }
+      .spark-card .pose-sheet { aspect-ratio:2/1; }
+      .pose-grid-spark { display:grid; grid-template-columns:repeat(4,1fr); gap:4px 12px; padding:0 18px 12px; color:#33496f; font-size:.9rem; }
+      footer { margin-top:36px; color:#40516f; font-size:.9rem; }
+      @media (max-width:980px) { .lineup { grid-template-columns:repeat(4,minmax(0,1fr)); } }
+      @media (max-width:680px) { main { padding-inline:14px; } .character-list { grid-template-columns:1fr; } .lineup { grid-template-columns:repeat(2,minmax(0,1fr)); } .lineup figure:last-child { grid-column:1/-1; } }
+      @media (max-width:360px) { .pose-labels,.pose-grid-spark { font-size:.8rem; gap:4px 8px; padding-inline:12px; } .character-card__heading { padding-inline:12px; } .character-copy { padding-inline:12px; } }
+      @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition:none!important; animation:none!important; } }
+      @media (prefers-contrast:more) { .lineup figure,.character-card { border:3px solid var(--navy); } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <h1>Meet the archive crew</h1>
+        <p>This development-only showcase is a visual review aid, not a player screen. Each machine keeps its real silhouette; the personality and face marks are fictional. The game route table, mission data, progress, language, rewards, and audio are not changed by this page.</p>
+        <p>Mission references: NASA and NSSDCA links are listed in <a href="NASA_SOURCES.md">the source register</a> and the <a href="CHARACTER_BIBLE.md">character bible</a>.</p>
+      </header>
+
+      <section aria-labelledby="lineup-title">
+        <h2 id="lineup-title">Seven characters, one storybook world</h2>
+        <div class="lineup">
+          <figure><svg viewBox="0 0 480 400" role="img" aria-label="Spirit, Mars Exploration Rover A"><use href="../src/assets/sprites/mission-character-poses.svg#spirit-idle"/></svg><figcaption>Spirit</figcaption></figure>
+          <figure><svg viewBox="0 0 480 400" role="img" aria-label="Opportunity, Mars Exploration Rover B"><use href="../src/assets/sprites/mission-character-poses.svg#opportunity-idle"/></svg><figcaption>Opportunity</figcaption></figure>
+          <figure><svg viewBox="0 0 480 400" role="img" aria-label="Sojourner, Mars Pathfinder rover"><use href="../src/assets/sprites/mission-character-poses.svg#sojourner-idle"/></svg><figcaption>Sojourner</figcaption></figure>
+          <figure><svg viewBox="0 0 480 400" role="img" aria-label="Ingenuity, Mars Helicopter"><use href="../src/assets/sprites/mission-character-poses.svg#ingenuity-idle"/></svg><figcaption>Ingenuity</figcaption></figure>
+          <figure><svg viewBox="0 0 480 400" role="img" aria-label="Surveyor 3 lunar lander"><use href="../src/assets/sprites/mission-character-poses.svg#surveyor-idle"/></svg><figcaption>Surveyor 3</figcaption></figure>
+          <figure><svg viewBox="0 0 480 400" role="img" aria-label="Apollo 17 Lunar Roving Vehicle"><use href="../src/assets/sprites/mission-character-poses.svg#apollo17-idle"/></svg><figcaption>Apollo 17 LRV</figcaption></figure>
+          <figure><svg viewBox="0 0 360 360" role="img" aria-label="Spark, fictional Archive Keeper"><use href="../src/assets/sprites/spark-poses.svg#spark-idle"/></svg><figcaption>Spark</figcaption></figure>
+        </div>
+      </section>
+
+      <section aria-labelledby="mars-title">
+        <h2 id="mars-title">Mars Expedition</h2>
+        <div class="character-list">
+          <article class="character-card">
+            <div class="character-card__heading"><h3>Spirit</h3><span class="character-card__kind">MER-A · rover</span></div>
+            <svg class="pose-sheet" viewBox="0 0 960 800" role="img" aria-label="Four original Spirit rover poses: idle, speaking, discovering, and celebration"><use href="../src/assets/sprites/mission-character-poses.svg#spirit-idle" x="0" y="0" width="480" height="400"/><use href="../src/assets/sprites/mission-character-poses.svg#spirit-speaking" x="480" y="0" width="480" height="400"/><use href="../src/assets/sprites/mission-character-poses.svg#spirit-discovering" x="0" y="400" width="480" height="400"/><use href="../src/assets/sprites/mission-character-poses.svg#spirit-celebration" x="480" y="400" width="480" height="400"/></svg>
+            <div class="pose-labels"><span>Idle</span><span>Speaking</span><span>Discovery</span><span>Celebration</span></div>
+            <div class="character-copy"><p><strong>Fictional voice:</strong> Persistent and curious; invites another look.</p><p class="notes"><strong>Hardware check:</strong> Six wheels, solar deck, twin-camera mast, articulated instrument arm. Same MER body as Opportunity.</p></div>
+          </article>
+          <article class="character-card">
+            <div class="character-card__heading"><h3>Opportunity</h3><span class="character-card__kind">MER-B · rover</span></div>
+            <svg class="pose-sheet" viewBox="0 0 960 800" role="img" aria-label="Four original Opportunity rover poses: idle, speaking, discovering, and celebration"><use href="../src/assets/sprites/mission-character-poses.svg#opportunity-idle" x="0" y="0" width="480" height="400"/><use href="../src/assets/sprites/mission-character-poses.svg#opportunity-speaking" x="480" y="0" width="480" height="400"/><use href="../src/assets/sprites/mission-character-poses.svg#opportunity-discovering" x="0" y="400" width="480" height="400"/><use href="../src/assets/sprites/mission-character-poses.svg#opportunity-celebration" x="480" y="400" width="480" height="400"/></svg>
+            <div class="pose-labels"><span>Idle</span><span>Speaking</span><span>Discovery</span><span>Celebration</span></div>
+            <div class="character-copy"><p><strong>Fictional voice:</strong> Optimistic and observant; asks the player to compare clues.</p><p class="notes"><strong>Hardware check:</strong> Shares Spirit’s six-wheel MER chassis, solar deck, mast cameras, and instrument arm. Color and expression differences are fictional.</p></div>
+          </article>
+          <article class="character-card">
+            <div class="character-card__heading"><h3>Sojourner</h3><span class="character-card__kind">Mars Pathfinder · rover</span></div>
+            <svg class="pose-sheet" viewBox="0 0 960 800" role="img" aria-label="Four original Sojourner rover poses: idle, speaking, discovering, and celebration"><use href="../src/assets/sprites/mission-character-poses.svg#sojourner-idle" x="0" y="0" width="480" height="400"/><use href="../src/assets/sprites/mission-character-poses.svg#sojourner-speaking" x="480" y="0" width="480" height="400"/><use href="../src/assets/sprites/mission-character-poses.svg#sojourner-discovering" x="0" y="400" width="480" height="400"/><use href="../src/assets/sprites/mission-character-poses.svg#sojourner-celebration" x="480" y="400" width="480" height="400"/></svg>
+            <div class="pose-labels"><span>Idle</span><span>Speaking</span><span>Discovery</span><span>Celebration</span></div>
+            <div class="character-copy"><p><strong>Fictional voice:</strong> Independent and curious; encourages one careful step at a time.</p><p class="notes"><strong>Hardware check:</strong> Compact rectangular chassis, six cleated wheels, solar deck, cameras, and an extendable APXS mechanism.</p></div>
+          </article>
+          <article class="character-card">
+            <div class="character-card__heading"><h3>Ingenuity</h3><span class="character-card__kind">Mars Helicopter</span></div>
+            <svg class="pose-sheet" viewBox="0 0 960 800" role="img" aria-label="Four original Ingenuity helicopter poses: idle, speaking, discovering, and celebration"><use href="../src/assets/sprites/mission-character-poses.svg#ingenuity-idle" x="0" y="0" width="480" height="400"/><use href="../src/assets/sprites/mission-character-poses.svg#ingenuity-speaking" x="480" y="0" width="480" height="400"/><use href="../src/assets/sprites/mission-character-poses.svg#ingenuity-discovering" x="0" y="400" width="480" height="400"/><use href="../src/assets/sprites/mission-character-poses.svg#ingenuity-celebration" x="480" y="400" width="480" height="400"/></svg>
+            <div class="pose-labels"><span>Idle</span><span>Speaking</span><span>Discovery</span><span>Celebration</span></div>
+            <div class="character-copy"><p><strong>Fictional voice:</strong> Playful and imaginative; invites a new point of view.</p><p class="notes"><strong>Hardware check:</strong> Four blades in two coaxial counter-rotors, solar panel above, compact body, four landing legs, cameras. No wheels.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="moon-title">
+        <h2 id="moon-title">Moon Expedition</h2>
+        <div class="character-list">
+          <article class="character-card">
+            <div class="character-card__heading"><h3>Surveyor 3</h3><span class="character-card__kind">Lunar lander</span></div>
+            <svg class="pose-sheet" viewBox="0 0 960 800" role="img" aria-label="Four original Surveyor 3 lander poses: idle, speaking, discovering, and celebration"><use href="../src/assets/sprites/mission-character-poses.svg#surveyor-idle" x="0" y="0" width="480" height="400"/><use href="../src/assets/sprites/mission-character-poses.svg#surveyor-speaking" x="480" y="0" width="480" height="400"/><use href="../src/assets/sprites/mission-character-poses.svg#surveyor-discovering" x="0" y="400" width="480" height="400"/><use href="../src/assets/sprites/mission-character-poses.svg#surveyor-celebration" x="480" y="400" width="480" height="400"/></svg>
+            <div class="pose-labels"><span>Idle</span><span>Speaking</span><span>Discovery</span><span>Celebration</span></div>
+            <div class="character-copy"><p><strong>Fictional voice:</strong> Patient and methodical; asks the player to observe and compare.</p><p class="notes"><strong>Hardware check:</strong> Triangular frame, three footpad legs, mast equipment, TV camera, and extendable soil sampler.</p></div>
+          </article>
+          <article class="character-card">
+            <div class="character-card__heading"><h3>Apollo 17 LRV</h3><span class="character-card__kind">Lunar Roving Vehicle · LRV-3</span></div>
+            <svg class="pose-sheet" viewBox="0 0 960 800" role="img" aria-label="Four original Apollo 17 lunar rover poses: idle, speaking, discovering, and celebration"><use href="../src/assets/sprites/mission-character-poses.svg#apollo17-idle" x="0" y="0" width="480" height="400"/><use href="../src/assets/sprites/mission-character-poses.svg#apollo17-speaking" x="480" y="0" width="480" height="400"/><use href="../src/assets/sprites/mission-character-poses.svg#apollo17-discovering" x="0" y="400" width="480" height="400"/><use href="../src/assets/sprites/mission-character-poses.svg#apollo17-celebration" x="480" y="400" width="480" height="400"/></svg>
+            <div class="pose-labels"><span>Idle</span><span>Speaking</span><span>Discovery</span><span>Celebration</span></div>
+            <div class="character-copy"><p><strong>Fictional voice:</strong> Sociable and adventurous; helps plan a route.</p><p class="notes"><strong>Hardware check:</strong> Open frame, four wire-mesh wheels, two empty seats, T-handle console, front dish antenna, and equipment trays.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="guide-title">
+        <h2 id="guide-title">Guide</h2>
+        <article class="character-card spark-card">
+          <div class="character-card__heading"><h3>Archive Keeper Spark</h3><span class="character-card__kind">Fictional guide · not NASA hardware</span></div>
+          <img class="pose-sheet" src="../src/assets/sprites/spark-poses.svg" alt="Spark's existing transparent eight-pose vector sheet: welcoming, idle, speaking, explaining, projecting, discovering, surprise, and celebration." />
+          <div class="pose-grid-spark"><span>Welcoming</span><span>Idle</span><span>Speaking</span><span>Explaining</span><span>Projecting</span><span>Discovering</span><span>Surprise</span><span>Celebration</span></div>
+          <div class="character-copy"><p><strong>Fictional voice:</strong> Friendly, curious, and enthusiastic. Spark helps the player navigate and think about clues, but is never presented as a scientific source.</p><p class="notes"><strong>Identity check:</strong> Preserve the existing small wheeled body, purple/lavender palette, expressive eyes, integrated holographic projector, and all eight approved vector poses.</p></div>
+        </article>
+      </section>
+
+      <footer>
+        <p>All mission-character SVGs are original hand-authored vectors with Codex code assistance. No image-generation model or raster artwork was used for these assets. The existing generated Spark concept PNG is retained separately and is not used here.</p>
+        <p>Gallery URL in Vite development mode: <code>/docs/CHARACTER_SHOWCASE.html</code>. This page is outside the React route table and does not change game state.</p>
+      </footer>
+    </main>
+  </body>
+</html>
