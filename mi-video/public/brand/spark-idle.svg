@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="360 0 360 360" width="1080" height="1080" role="img" aria-labelledby="spark-sheet-title spark-sheet-desc">
+  <title id="spark-sheet-title">Spark, eight original vector poses</title>
+  <desc id="spark-sheet-desc">A small purple robot with wheels, expressive eyes, arms, and an integrated hologram projector shown in eight poses.</desc>
+  <defs>
+    <g id="spark-core">
+      <ellipse cx="180" cy="324" rx="112" ry="17" fill="#111D38" opacity=".18" />
+      <g stroke="#111D38" stroke-width="7">
+        <circle cx="132" cy="292" r="29" fill="#273C67" />
+        <circle cx="228" cy="292" r="29" fill="#273C67" />
+        <circle cx="132" cy="292" r="11" fill="#F7AE32" />
+        <circle cx="228" cy="292" r="11" fill="#F7AE32" />
+        <rect x="101" y="237" width="158" height="54" rx="21" fill="#9270D9" />
+        <rect x="125" y="213" width="110" height="38" rx="16" fill="#C7A8EE" />
+        <circle cx="180" cy="137" r="77" fill="#9270D9" />
+        <path d="M121 139c0-35 25-61 59-61s59 26 59 61v13c0 27-24 49-59 49s-59-22-59-49z" fill="#273C67" />
+        <path d="M161 68c0-17 8-29 19-29s19 12 19 29" fill="#F7AE32" />
+        <circle cx="180" cy="51" r="11" fill="#C7A8EE" />
+        <path d="M147 223v-10m66 10v-10" fill="none" stroke="#F7D779" stroke-linecap="round" />
+      </g>
+      <path d="M113 251h134" stroke="#C7A8EE" stroke-width="5" stroke-linecap="round" opacity=".65" />
+      <circle cx="126" cy="267" r="5" fill="#F7D779" />
+      <circle cx="234" cy="267" r="5" fill="#F7D779" />
+    </g>
+    <g id="spark-arms-rest" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M115 228 91 244l-7 16" stroke="#111D38" stroke-width="21" />
+      <path d="M115 228 91 244l-7 16" stroke="#C7A8EE" stroke-width="13" />
+      <circle cx="84" cy="262" r="11" fill="#F7AE32" stroke="#111D38" stroke-width="5" />
+      <path d="m245 228 24 16 7 16" stroke="#111D38" stroke-width="21" />
+      <path d="m245 228 24 16 7 16" stroke="#C7A8EE" stroke-width="13" />
+      <circle cx="276" cy="262" r="11" fill="#F7AE32" stroke="#111D38" stroke-width="5" />
+    </g>
+    <g id="spark-eyes-open">
+      <ellipse cx="157" cy="137" rx="9" ry="13" fill="#FFF4D9" />
+      <ellipse cx="203" cy="137" rx="9" ry="13" fill="#FFF4D9" />
+      <circle cx="159" cy="140" r="4" fill="#111D38" />
+      <circle cx="205" cy="140" r="4" fill="#111D38" />
+    </g>
+    <g id="spark-mouth-smile" fill="none" stroke="#F7D779" stroke-width="5" stroke-linecap="round">
+      <path d="M165 166q15 13 30 0" />
+    </g>
+    <g id="spark-mouth-open">
+      <ellipse cx="180" cy="168" rx="9" ry="11" fill="#F7AE32" stroke="#111D38" stroke-width="3" />
+    </g>
+  </defs>
+
+  <symbol id="spark-welcoming" viewBox="0 0 360 360">
+    <use href="#spark-core" />
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M115 228 91 214l-10-28" stroke="#111D38" stroke-width="21" />
+      <path d="M115 228 91 214l-10-28" stroke="#C7A8EE" stroke-width="13" />
+      <circle cx="80" cy="182" r="11" fill="#F7AE32" stroke="#111D38" stroke-width="5" />
+      <path d="m245 228 24 16 7 16" stroke="#111D38" stroke-width="21" />
+      <path d="m245 228 24 16 7 16" stroke="#C7A8EE" stroke-width="13" />
+      <circle cx="276" cy="262" r="11" fill="#F7AE32" stroke="#111D38" stroke-width="5" />
+    </g>
+    <use href="#spark-eyes-open" /><use href="#spark-mouth-smile" />
+  </symbol>
+
+  <symbol id="spark-idle" viewBox="0 0 360 360">
+    <use href="#spark-core" /><use href="#spark-arms-rest" />
+    <use href="#spark-eyes-open" /><use href="#spark-mouth-smile" />
+  </symbol>
+
+  <symbol id="spark-speaking" viewBox="0 0 360 360">
+    <use href="#spark-core" /><use href="#spark-arms-rest" />
+    <use href="#spark-eyes-open" /><use href="#spark-mouth-open" />
+    <path d="M251 119q15 18 0 36m13-44q23 25 0 52" fill="none" stroke="#F7D779" stroke-width="5" stroke-linecap="round" />
+  </symbol>
+
+  <symbol id="spark-explaining" viewBox="0 0 360 360">
+    <use href="#spark-core" />
+    <path d="M115 228 91 244l-7 16" fill="none" stroke="#111D38" stroke-width="21" stroke-linecap="round" />
+    <path d="M115 228 91 244l-7 16" fill="none" stroke="#C7A8EE" stroke-width="13" stroke-linecap="round" />
+    <circle cx="84" cy="262" r="11" fill="#F7AE32" stroke="#111D38" stroke-width="5" />
+    <path d="m245 228 28-18 20-18" fill="none" stroke="#111D38" stroke-width="21" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="m245 228 28-18 20-18" fill="none" stroke="#C7A8EE" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="m287 193 9-9 3 14" fill="#F7AE32" stroke="#111D38" stroke-width="4" stroke-linejoin="round" />
+    <use href="#spark-eyes-open" /><use href="#spark-mouth-smile" />
+    <path d="M310 175l5 10 11 2-8 7 2 11-10-5-10 5 2-11-8-7 11-2z" fill="#F7D779" stroke="#111D38" stroke-width="3" />
+  </symbol>
+
+  <symbol id="spark-projecting-body" viewBox="0 0 360 360">
+    <use href="#spark-core" />
+    <path d="M180 48 244 19v58l-64-26" fill="#C7A8EE" opacity=".33" />
+    <g fill="none" stroke="#F7D779" stroke-width="3">
+      <path d="M231 33h83v56h-83z" stroke-dasharray="5 5" />
+      <path d="m242 72 20-19 17 12 20-22" />
+      <circle cx="245" cy="42" r="4" fill="#F7AE32" /><circle cx="292" cy="67" r="5" fill="#F7AE32" />
+    </g>
+    <use href="#spark-eyes-open" /><use href="#spark-mouth-smile" />
+  </symbol>
+
+  <symbol id="spark-projecting-arms" viewBox="0 0 360 360">
+    <use href="#spark-arms-rest" />
+  </symbol>
+
+  <symbol id="spark-projecting" viewBox="0 0 360 360">
+    <use href="#spark-projecting-body" />
+    <use href="#spark-projecting-arms" />
+  </symbol>
+
+  <symbol id="spark-discovering" viewBox="0 0 360 360">
+    <use href="#spark-core" /><use href="#spark-arms-rest" />
+    <ellipse cx="157" cy="137" rx="9" ry="13" fill="#FFF4D9" />
+    <ellipse cx="203" cy="137" rx="9" ry="13" fill="#FFF4D9" />
+    <circle cx="161" cy="135" r="4" fill="#111D38" /><circle cx="207" cy="135" r="4" fill="#111D38" />
+    <use href="#spark-mouth-smile" />
+    <path d="M263 110l7 14 15 2-11 10 3 15-14-7-13 7 2-15-11-10 15-2z" fill="#F7D779" stroke="#111D38" stroke-width="3" />
+  </symbol>
+
+  <symbol id="spark-surprise" viewBox="0 0 360 360">
+    <use href="#spark-core" /><use href="#spark-arms-rest" />
+    <ellipse cx="157" cy="137" rx="12" ry="17" fill="#FFF4D9" /><ellipse cx="203" cy="137" rx="12" ry="17" fill="#FFF4D9" />
+    <circle cx="157" cy="139" r="4" fill="#111D38" /><circle cx="203" cy="139" r="4" fill="#111D38" />
+    <ellipse cx="180" cy="168" rx="9" ry="12" fill="#F7AE32" stroke="#111D38" stroke-width="3" />
+    <path d="M267 101v17m0 9v2" stroke="#F7D779" stroke-width="6" stroke-linecap="round" />
+  </symbol>
+
+  <symbol id="spark-celebration" viewBox="0 0 360 360">
+    <use href="#spark-core" />
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M115 228 93 207l-5-27" stroke="#111D38" stroke-width="21" /><path d="M115 228 93 207l-5-27" stroke="#C7A8EE" stroke-width="13" />
+      <circle cx="87" cy="174" r="11" fill="#F7AE32" stroke="#111D38" stroke-width="5" />
+      <path d="m245 228 22-21 5-27" stroke="#111D38" stroke-width="21" /><path d="m245 228 22-21 5-27" stroke="#C7A8EE" stroke-width="13" />
+      <circle cx="273" cy="174" r="11" fill="#F7AE32" stroke="#111D38" stroke-width="5" />
+    </g>
+    <path d="M146 139q10-12 20 0m28 0q10-12 20 0" fill="none" stroke="#FFF4D9" stroke-width="6" stroke-linecap="round" />
+    <use href="#spark-mouth-smile" />
+    <path d="m180 7 8 17 18 2-13 12 4 18-17-9-16 9 3-18-13-12 18-2z" fill="#F7D779" stroke="#111D38" stroke-width="3" />
+    <circle cx="77" cy="124" r="6" fill="#F7AE32" /><circle cx="283" cy="128" r="6" fill="#C7A8EE" />
+  </symbol>
+
+  <g aria-hidden="true">
+    <use href="#spark-welcoming" x="0" y="0" width="360" height="360" />
+    <use href="#spark-idle" x="360" y="0" width="360" height="360" />
+    <use href="#spark-speaking" x="720" y="0" width="360" height="360" />
+    <use href="#spark-explaining" x="1080" y="0" width="360" height="360" />
+    <use href="#spark-projecting" x="0" y="360" width="360" height="360" />
+    <use href="#spark-discovering" x="360" y="360" width="360" height="360" />
+    <use href="#spark-surprise" x="720" y="360" width="360" height="360" />
+    <use href="#spark-celebration" x="1080" y="360" width="360" height="360" />
+  </g>
+</svg>

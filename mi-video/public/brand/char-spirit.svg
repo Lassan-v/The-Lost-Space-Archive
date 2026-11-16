@@ -1,0 +1,192 @@
+<svg width="960" height="1200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 400" role="img" aria-labelledby="mission-characters-title mission-characters-desc">
+  <title id="mission-characters-title">Mission hardware character pose preview</title>
+  <desc id="mission-characters-desc">Six original, transparent vector characters: two matching Mars Exploration Rovers, the Sojourner rover, Ingenuity helicopter, Surveyor 3 lander, and Apollo 17 Lunar Roving Vehicle.</desc>
+  <defs>
+    <linearGradient id="mer-ochre" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F7D779"/><stop offset="1" stop-color="#C8794A"/></linearGradient>
+    <linearGradient id="mer-copper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F6C36C"/><stop offset="1" stop-color="#A95E4B"/></linearGradient>
+    <linearGradient id="sojourner-gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFF0AA"/><stop offset="1" stop-color="#D9933E"/></linearGradient>
+    <linearGradient id="ingenuity-foil" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFF0C5"/><stop offset=".52" stop-color="#C9B99A"/><stop offset="1" stop-color="#827761"/></linearGradient>
+    <linearGradient id="surveyor-foil" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFF6D9"/><stop offset=".5" stop-color="#D2C8A8"/><stop offset="1" stop-color="#8D9B9C"/></linearGradient>
+    <linearGradient id="lrv-frame" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFF0C1"/><stop offset="1" stop-color="#B89E72"/></linearGradient>
+    <pattern id="mer-wheel-tread" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><path d="M2 0v12M8 0v12" stroke="#F7D779" stroke-width="2" opacity=".7"/></pattern>
+    <pattern id="sojourner-wheel-tread" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 3h10M0 8h10" stroke="#F7D779" stroke-width="2"/></pattern>
+    <pattern id="lrv-wire-mesh" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M0 0 10 10M10 0 0 10" stroke="#D8C69D" stroke-width="1.2" opacity=".8"/></pattern>
+
+    <!-- Spirit and Opportunity share the same six-wheel MER chassis and hardware silhouette. -->
+    <g id="mer-spirit-core" stroke="#172744" stroke-linecap="round" stroke-linejoin="round">
+      <ellipse cx="239" cy="349" rx="179" ry="18" fill="#172744" opacity=".14" stroke="none"/>
+      <path d="m128 303 56-42 111-1 62 43" fill="none" stroke="#263B61" stroke-width="12"/>
+      <g stroke-width="7">
+        <circle cx="112" cy="310" r="29" fill="#283B5B"/><circle cx="112" cy="310" r="18" fill="url(#mer-wheel-tread)"/><circle cx="112" cy="310" r="8" fill="#F7D779"/>
+        <circle cx="161" cy="319" r="29" fill="#283B5B"/><circle cx="161" cy="319" r="18" fill="url(#mer-wheel-tread)"/><circle cx="161" cy="319" r="8" fill="#F7D779"/>
+        <circle cx="211" cy="323" r="29" fill="#283B5B"/><circle cx="211" cy="323" r="18" fill="url(#mer-wheel-tread)"/><circle cx="211" cy="323" r="8" fill="#F7D779"/>
+        <circle cx="267" cy="323" r="29" fill="#283B5B"/><circle cx="267" cy="323" r="18" fill="url(#mer-wheel-tread)"/><circle cx="267" cy="323" r="8" fill="#F7D779"/>
+        <circle cx="317" cy="319" r="29" fill="#283B5B"/><circle cx="317" cy="319" r="18" fill="url(#mer-wheel-tread)"/><circle cx="317" cy="319" r="8" fill="#F7D779"/>
+        <circle cx="366" cy="310" r="29" fill="#283B5B"/><circle cx="366" cy="310" r="18" fill="url(#mer-wheel-tread)"/><circle cx="366" cy="310" r="8" fill="#F7D779"/>
+      </g>
+      <path d="M111 241 72 198h77l22 33m161 10 35-43h-72l-24 32" fill="#F2C96E" stroke-width="7"/>
+      <path d="M81 203h55m-47 12h54m-46 12h54m171-24h55m-63 12h55m-63 12h55" stroke="#B97952" stroke-width="3" opacity=".75"/>
+      <path d="M136 235q30-22 63-8l37 14 66-13q22-4 36 10v56H128v-43q0-11 8-16" fill="url(#mer-ochre)" stroke-width="8"/>
+      <path d="M151 248h166v30H151z" fill="#354968" stroke-width="5"/>
+      <path d="M165 254h43v18h-43zM215 254h42v18h-42zM265 254h38v18h-38z" fill="#F7D779" stroke="none" opacity=".65"/>
+      <path d="M232 241V151l9-34 12 34v90" fill="none" stroke="#D8B66C" stroke-width="12"/>
+      <path d="M228 139q2-19 24-23l33 9-2 34-31 6-24-10z" fill="#D9B876" stroke-width="7"/>
+      <circle cx="244" cy="140" r="12" fill="#172744" stroke-width="4"/><circle cx="277" cy="143" r="11" fill="#172744" stroke-width="4"/>
+      <circle cx="244" cy="140" r="5" fill="#C7A8EE" stroke="none"/><circle cx="277" cy="143" r="4" fill="#F7AE32" stroke="none"/>
+      <path d="M342 264q25 5 34 29l17 8" fill="none" stroke="#A97145" stroke-width="10"/>
+      <path d="m386 296 19 7-13 13-12-6z" fill="#C7A8EE" stroke-width="4"/>
+      <path d="M177 232q32-17 66-3" fill="none" stroke="#FFF0C1" stroke-width="5" opacity=".65"/>
+      <circle cx="292" cy="286" r="3" fill="#FFF0C1" stroke="none"/><circle cx="304" cy="286" r="3" fill="#FFF0C1" stroke="none"/>
+    </g>
+
+    <g id="mer-opportunity-core" stroke="#172744" stroke-linecap="round" stroke-linejoin="round">
+      <ellipse cx="239" cy="349" rx="179" ry="18" fill="#172744" opacity=".14" stroke="none"/>
+      <path d="m128 303 56-42 111-1 62 43" fill="none" stroke="#263B61" stroke-width="12"/>
+      <g stroke-width="7">
+        <circle cx="112" cy="310" r="29" fill="#283B5B"/><circle cx="112" cy="310" r="18" fill="url(#mer-wheel-tread)"/><circle cx="112" cy="310" r="8" fill="#F7D779"/>
+        <circle cx="161" cy="319" r="29" fill="#283B5B"/><circle cx="161" cy="319" r="18" fill="url(#mer-wheel-tread)"/><circle cx="161" cy="319" r="8" fill="#F7D779"/>
+        <circle cx="211" cy="323" r="29" fill="#283B5B"/><circle cx="211" cy="323" r="18" fill="url(#mer-wheel-tread)"/><circle cx="211" cy="323" r="8" fill="#F7D779"/>
+        <circle cx="267" cy="323" r="29" fill="#283B5B"/><circle cx="267" cy="323" r="18" fill="url(#mer-wheel-tread)"/><circle cx="267" cy="323" r="8" fill="#F7D779"/>
+        <circle cx="317" cy="319" r="29" fill="#283B5B"/><circle cx="317" cy="319" r="18" fill="url(#mer-wheel-tread)"/><circle cx="317" cy="319" r="8" fill="#F7D779"/>
+        <circle cx="366" cy="310" r="29" fill="#283B5B"/><circle cx="366" cy="310" r="18" fill="url(#mer-wheel-tread)"/><circle cx="366" cy="310" r="8" fill="#F7D779"/>
+      </g>
+      <path d="M136 235q30-22 63-8l37 14 66-13q22-4 36 10v56H128v-43q0-11 8-16" fill="url(#mer-copper)" stroke-width="8"/>
+      <path d="M151 248h166v30H151z" fill="#354968" stroke-width="5"/>
+      <path d="M165 254h43v18h-43zM215 254h42v18h-42zM265 254h38v18h-38z" fill="#C7A8EE" stroke="none" opacity=".72"/>
+      <path d="M111 241 72 198h77l22 33m161 10 35-43h-72l-24 32" fill="#D89451" stroke-width="7"/>
+      <path d="M81 203h55m-47 12h54m-46 12h54m171-24h55m-63 12h55m-63 12h55" stroke="#F7D779" stroke-width="3" opacity=".78"/>
+      <path d="M232 241V151l9-34 12 34v90" fill="none" stroke="#D8B66C" stroke-width="12"/>
+      <path d="M228 139q2-19 24-23l33 9-2 34-31 6-24-10z" fill="#D9B876" stroke-width="7"/>
+      <circle cx="244" cy="140" r="12" fill="#172744" stroke-width="4"/><circle cx="277" cy="143" r="11" fill="#172744" stroke-width="4"/>
+      <circle cx="244" cy="140" r="5" fill="#C7A8EE" stroke="none"/><circle cx="277" cy="143" r="4" fill="#F7AE32" stroke="none"/>
+      <path d="M342 264q25 5 34 29l17 8" fill="none" stroke="#A97145" stroke-width="10"/>
+      <path d="m386 296 19 7-13 13-12-6z" fill="#C7A8EE" stroke-width="4"/>
+      <path d="M177 231q31-14 63-2" fill="none" stroke="#FFF0C1" stroke-width="5" opacity=".7"/>
+    </g>
+
+    <g id="sojourner-core" stroke="#172744" stroke-linecap="round" stroke-linejoin="round">
+      <ellipse cx="240" cy="348" rx="155" ry="16" fill="#172744" opacity=".14" stroke="none"/>
+      <path d="M135 294 174 270h128l47 28" fill="none" stroke="#364966" stroke-width="9"/>
+      <g stroke-width="7">
+        <circle cx="128" cy="307" r="25" fill="#283B5B"/><circle cx="128" cy="307" r="14" fill="url(#sojourner-wheel-tread)"/><circle cx="128" cy="307" r="6" fill="#F7AE32"/>
+        <circle cx="183" cy="319" r="25" fill="#283B5B"/><circle cx="183" cy="319" r="14" fill="url(#sojourner-wheel-tread)"/><circle cx="183" cy="319" r="6" fill="#F7AE32"/>
+        <circle cx="238" cy="323" r="25" fill="#283B5B"/><circle cx="238" cy="323" r="14" fill="url(#sojourner-wheel-tread)"/><circle cx="238" cy="323" r="6" fill="#F7AE32"/>
+        <circle cx="293" cy="319" r="25" fill="#283B5B"/><circle cx="293" cy="319" r="14" fill="url(#sojourner-wheel-tread)"/><circle cx="293" cy="319" r="6" fill="#F7AE32"/>
+        <circle cx="348" cy="307" r="25" fill="#283B5B"/><circle cx="348" cy="307" r="14" fill="url(#sojourner-wheel-tread)"/><circle cx="348" cy="307" r="6" fill="#F7AE32"/>
+        <circle cx="393" cy="295" r="23" fill="#283B5B"/><circle cx="393" cy="295" r="12" fill="url(#sojourner-wheel-tread)"/><circle cx="393" cy="295" r="5" fill="#F7AE32"/>
+      </g>
+      <path d="M146 222h191l22 21v57H128v-55q0-23 18-23" fill="url(#sojourner-gold)" stroke-width="8"/>
+      <path d="M154 205h177v25H154z" fill="#273C67" stroke-width="6"/>
+      <path d="M164 209h27v17h-27zm37 0h27v17h-27zm37 0h27v17h-27zm37 0h27v17h-27z" fill="#F7D779" stroke="none" opacity=".84"/>
+      <path d="M181 196v-17h84v17" fill="none" stroke="#D5A44D" stroke-width="8"/>
+      <rect x="206" y="164" width="52" height="30" rx="7" fill="#C7A8EE" stroke-width="6"/>
+      <circle cx="220" cy="179" r="6" fill="#172744" stroke="none"/><circle cx="244" cy="179" r="6" fill="#172744" stroke="none"/>
+      <path d="M151 243h169" stroke="#FFF5D5" stroke-width="5" opacity=".72"/>
+      <path d="M334 254q35 3 45 31l21 8" fill="none" stroke="#B47A3B" stroke-width="10"/>
+      <path d="m395 287 18 6-13 15-13-7z" fill="#F7D779" stroke-width="4"/>
+    </g>
+
+    <g id="ingenuity-core" stroke="#172744" stroke-linecap="round" stroke-linejoin="round">
+      <ellipse cx="240" cy="347" rx="105" ry="13" fill="#172744" opacity=".14" stroke="none"/>
+      <path d="M197 245 132 315m151-70 65 70M202 244l-45 77m121-77 45 77" fill="none" stroke="#B9AD94" stroke-width="11"/>
+      <path d="m132 315-12 6m228-6 12 6m-226-1-8 8m220-8 8 8" stroke="#172744" stroke-width="7"/>
+      <path d="M194 194h92l17 49-18 40h-91l-18-40z" fill="url(#ingenuity-foil)" stroke-width="8"/>
+      <path d="M198 209h84v48h-84z" fill="#344460" stroke-width="6"/>
+      <path d="M212 221h56v25h-56z" fill="#E5C876" stroke-width="4"/>
+      <circle cx="226" cy="233" r="5" fill="#172744" stroke="none"/><circle cx="253" cy="233" r="5" fill="#172744" stroke="none"/>
+      <path d="M240 189V125m0 4v-38" fill="none" stroke="#857A63" stroke-width="11"/>
+      <path d="M91 97h298l-22 17H112z" fill="#D9C898" stroke-width="7"/>
+      <path d="M118 101h54v8h-54m67-8h54v8h-54m67-8h54v8h-54m-150 4h54v7h-54m67-7h54v7h-54m67-7h54v7h-54" fill="#78816D" stroke="none"/>
+      <path d="M111 143h258" stroke="#F7D779" stroke-width="8"/>
+      <path d="M111 143 61 118m308 25 50-25" stroke="#172744" stroke-width="10"/>
+      <path d="m67 115 53-12m307 12-53-12" stroke="#D5C392" stroke-width="8"/>
+      <circle cx="150" cy="120" r="4" fill="#F7AE32" stroke="none"/><circle cx="330" cy="120" r="4" fill="#F7AE32" stroke="none"/>
+    </g>
+
+    <g id="surveyor-core" stroke="#172744" stroke-linecap="round" stroke-linejoin="round">
+      <ellipse cx="240" cy="349" rx="154" ry="14" fill="#172744" opacity=".14" stroke="none"/>
+      <path d="m212 212-97 112m151-112 99 112m-100-104 8 130" fill="none" stroke="#AEB2A5" stroke-width="19"/>
+      <path d="m115 324-20 5 3 9 27-1m239-13 20 5-3 9-27-1m-26 8 3 16h20l2-16" fill="#E6DAB9" stroke-width="6"/>
+      <path d="M192 168h96l33 63-48 44h-66l-48-44z" fill="url(#surveyor-foil)" stroke-width="8"/>
+      <path d="m176 194 57 25v46l-49-29zm128 0-57 25v46l49-29z" fill="#C8B477" stroke-width="5"/>
+      <path d="M224 158V89h31v69" fill="none" stroke="#B8A875" stroke-width="11"/>
+      <path d="M199 82h89v21h-89z" fill="#E2CB85" stroke-width="6"/>
+      <path d="M213 86v13m17-13v13m17-13v13m17-13v13" stroke="#8F8A6F" stroke-width="3"/>
+      <path d="M210 157q-6-22 21-26h47q20 5 12 27l-7 19h-68z" fill="#D5C9AC" stroke-width="7"/>
+      <path d="M222 153h51" stroke="#59687A" stroke-width="9"/><circle cx="247" cy="153" r="8" fill="#C7A8EE" stroke-width="4"/>
+      <path d="M292 214q45-21 77 3l-20 14-44 5" fill="none" stroke="#B8A875" stroke-width="10"/>
+      <path d="m347 224 33 10-12 22-31-9z" fill="#E9D6A2" stroke-width="6"/>
+      <path d="M170 223h34m100 0h36" stroke="#F7D779" stroke-width="5" opacity=".86"/>
+    </g>
+
+    <g id="apollo17-core" stroke="#172744" stroke-linecap="round" stroke-linejoin="round">
+      <ellipse cx="240" cy="351" rx="184" ry="16" fill="#172744" opacity=".14" stroke="none"/>
+      <g stroke-width="7">
+        <circle cx="121" cy="292" r="39" fill="#293B57"/><circle cx="121" cy="292" r="28" fill="url(#lrv-wire-mesh)"/><circle cx="121" cy="292" r="11" fill="#D7BD84"/>
+        <circle cx="358" cy="292" r="39" fill="#293B57"/><circle cx="358" cy="292" r="28" fill="url(#lrv-wire-mesh)"/><circle cx="358" cy="292" r="11" fill="#D7BD84"/>
+        <circle cx="151" cy="314" r="34" fill="#293B57"/><circle cx="151" cy="314" r="24" fill="url(#lrv-wire-mesh)"/><circle cx="151" cy="314" r="9" fill="#D7BD84"/>
+        <circle cx="328" cy="314" r="34" fill="#293B57"/><circle cx="328" cy="314" r="24" fill="url(#lrv-wire-mesh)"/><circle cx="328" cy="314" r="9" fill="#D7BD84"/>
+      </g>
+      <path d="m114 260 50-54 152 0 50 54M165 206l-15 71m166-71 17 71M150 277h184m-125-71 23 71m58-71-22 71" fill="none" stroke="url(#lrv-frame)" stroke-width="11"/>
+      <path d="M183 207q5-43 38-43t37 43" fill="#C5B38A" stroke-width="7"/>
+      <path d="M253 207q5-43 38-43t37 43" fill="#C5B38A" stroke-width="7"/>
+      <path d="M192 185h60m-49 0 10 22m66-22h60m-49 0 10 22" stroke="#F7D779" stroke-width="5"/>
+      <path d="M239 205v-45m0 0-20-18m20 18 20-18" fill="none" stroke="#D2BC88" stroke-width="8"/>
+      <circle cx="239" cy="160" r="10" fill="#273C67" stroke-width="5"/>
+      <path d="M235 211h54v46h-54z" fill="#D99B4F" stroke-width="6"/>
+      <path d="M243 220h39v19h-39z" fill="#344968" stroke-width="4"/>
+      <circle cx="254" cy="229" r="4" fill="#F7D779" stroke="none"/><circle cx="271" cy="229" r="4" fill="#C7A8EE" stroke="none"/>
+      <path d="M184 216h-26v-20h26m127 20h27v-20h-27" fill="#B89461" stroke-width="5"/>
+      <path d="M157 190V125" fill="none" stroke="#AD8E56" stroke-width="7"/>
+      <path d="M132 115q25-31 50 0l-11 17h-28z" fill="#D8C797" stroke-width="6"/>
+      <path d="M143 117h28" stroke="#F7D779" stroke-width="4"/>
+      <path d="M160 266h158" stroke="#E7A74D" stroke-width="8"/>
+    </g>
+  </defs>
+
+  <!-- Spirit: original expression only; the physical MER chassis is shared with Opportunity. -->
+  <symbol id="spirit-idle" viewBox="0 0 480 400"><use href="#mer-spirit-core"/><path d="M230 145q13 11 26 0" fill="none" stroke="#F7D779" stroke-width="5" stroke-linecap="round"/><path d="M85 155h24" stroke="#C7A8EE" stroke-width="4" stroke-linecap="round"/></symbol>
+  <symbol id="spirit-speaking" viewBox="0 0 480 400"><use href="#mer-spirit-core"/><path d="M230 145q13 11 26 0" fill="none" stroke="#F7D779" stroke-width="5" stroke-linecap="round"/><path d="M72 136q14 16 0 32m18-41q22 25 0 50" fill="none" stroke="#9270D9" stroke-width="5" stroke-linecap="round"/></symbol>
+  <symbol id="spirit-discovering" viewBox="0 0 480 400"><use href="#mer-spirit-core"/><path d="M392 178l9 18 20 3-15 14 3 20-17-9-18 9 4-20-15-14 20-3z" fill="#F7D779" stroke="#172744" stroke-width="4"/><path d="M344 263q28 1 41 20" fill="none" stroke="#C7A8EE" stroke-width="9" stroke-linecap="round"/></symbol>
+  <symbol id="spirit-celebration" viewBox="0 0 480 400"><use href="#mer-spirit-core"/><path d="M225 145q12-12 23 0m7 0q12-12 23 0" fill="none" stroke="#F7D779" stroke-width="5" stroke-linecap="round"/><path d="m78 135 6 13 15 2-11 10 3 14-13-7-12 7 2-14-11-10 15-2zM405 128l5 11 12 2-9 8 2 12-10-6-10 6 2-12-9-8 12-2z" fill="#F7D779" stroke="#172744" stroke-width="3"/></symbol>
+
+  <!-- Opportunity: same MER construction, distinct fictional vocal and expression accents. -->
+  <symbol id="opportunity-idle" viewBox="0 0 480 400"><use href="#mer-opportunity-core"/><path d="M230 145q13 13 26 0" fill="none" stroke="#FFF0C1" stroke-width="5" stroke-linecap="round"/><circle cx="90" cy="157" r="4" fill="#F7D779"/></symbol>
+  <symbol id="opportunity-speaking" viewBox="0 0 480 400"><use href="#mer-opportunity-core"/><ellipse cx="243" cy="146" rx="8" ry="10" fill="#F7AE32" stroke="#172744" stroke-width="3"/><path d="M73 141q14 15 0 30m17-39q22 24 0 48" fill="none" stroke="#F7D779" stroke-width="5" stroke-linecap="round"/></symbol>
+  <symbol id="opportunity-discovering" viewBox="0 0 480 400"><use href="#mer-opportunity-core"/><circle cx="417" cy="190" r="16" fill="#C7A8EE" stroke="#172744" stroke-width="4"/><circle cx="417" cy="190" r="6" fill="#FFF4D9"/><path d="M360 265q23 4 38 21" fill="none" stroke="#F7D779" stroke-width="9" stroke-linecap="round"/></symbol>
+  <symbol id="opportunity-celebration" viewBox="0 0 480 400"><use href="#mer-opportunity-core"/><path d="M225 145q12-12 23 0m7 0q12-12 23 0" fill="none" stroke="#FFF0C1" stroke-width="5" stroke-linecap="round"/><path d="m74 137 6 13 15 2-11 10 3 14-13-7-13 7 3-14-11-10 15-2zM405 136l5 12 13 2-10 9 2 13-10-6-11 6 2-13-9-9 12-2z" fill="#C7A8EE" stroke="#172744" stroke-width="3"/></symbol>
+
+  <!-- Sojourner: compact six-wheel Pathfinder rover with its top deck and instrument arm. -->
+  <symbol id="sojourner-idle" viewBox="0 0 480 400"><use href="#sojourner-core"/><path d="M215 184q12 10 24 0" fill="none" stroke="#FFF0C1" stroke-width="4" stroke-linecap="round"/></symbol>
+  <symbol id="sojourner-speaking" viewBox="0 0 480 400"><use href="#sojourner-core"/><ellipse cx="232" cy="185" rx="6" ry="8" fill="#F7AE32" stroke="#172744" stroke-width="3"/><path d="M370 174q13 14 0 28m17-36q20 21 0 44" fill="none" stroke="#9270D9" stroke-width="5" stroke-linecap="round"/></symbol>
+  <symbol id="sojourner-discovering" viewBox="0 0 480 400"><use href="#sojourner-core"/><path d="M404 149l8 16 18 3-13 12 3 18-16-8-16 8 3-18-13-12 18-3z" fill="#F7D779" stroke="#172744" stroke-width="4"/><path d="M354 273q25 8 43 25" fill="none" stroke="#C7A8EE" stroke-width="9" stroke-linecap="round"/></symbol>
+  <symbol id="sojourner-celebration" viewBox="0 0 480 400"><use href="#sojourner-core"/><path d="M210 184q12-12 24 0m7 0q12-12 24 0" fill="none" stroke="#FFF0C1" stroke-width="4" stroke-linecap="round"/><path d="m109 167 6 12 13 2-10 9 2 13-11-6-11 6 2-13-10-9 13-2zM392 139l5 11 12 2-9 8 2 12-10-6-10 6 2-12-9-8 12-2z" fill="#F7D779" stroke="#172744" stroke-width="3"/></symbol>
+
+  <!-- Ingenuity: four blades in two coaxial rotors, solar panel, compact body, and four legs. -->
+  <symbol id="ingenuity-idle" viewBox="0 0 480 400"><use href="#ingenuity-core"/><path d="M227 229q13 11 26 0" fill="none" stroke="#F7D779" stroke-width="4" stroke-linecap="round"/></symbol>
+  <symbol id="ingenuity-speaking" viewBox="0 0 480 400"><use href="#ingenuity-core"/><ellipse cx="240" cy="229" rx="7" ry="9" fill="#F7AE32" stroke="#172744" stroke-width="3"/><path d="M322 197q13 13 0 26m17-34q20 20 0 42" fill="none" stroke="#C7A8EE" stroke-width="5" stroke-linecap="round"/></symbol>
+  <symbol id="ingenuity-discovering" viewBox="0 0 480 400"><use href="#ingenuity-core"/><path d="M382 174l8 16 18 3-13 12 3 18-16-8-16 8 3-18-13-12 18-3z" fill="#F7D779" stroke="#172744" stroke-width="4"/><path d="M276 234 318 214" stroke="#F7D779" stroke-width="5" stroke-linecap="round"/></symbol>
+  <symbol id="ingenuity-celebration" viewBox="0 0 480 400"><use href="#ingenuity-core"/><path d="m74 146 7 14 16 2-12 11 3 16-14-8-14 8 3-16-12-11 16-2zM397 145l6 13 14 2-10 10 2 14-12-7-12 7 2-14-10-10 14-2z" fill="#F7D779" stroke="#172744" stroke-width="3"/><path d="M224 228q15-13 31 0" fill="none" stroke="#F7D779" stroke-width="5" stroke-linecap="round"/></symbol>
+
+  <!-- Surveyor 3: triangular lander, three footpad legs, TV camera, and extendable surface sampler. -->
+  <symbol id="surveyor-idle" viewBox="0 0 480 400"><use href="#surveyor-core"/><path d="M238 154q11 8 22 0" fill="none" stroke="#F7D779" stroke-width="4" stroke-linecap="round"/></symbol>
+  <symbol id="surveyor-speaking" viewBox="0 0 480 400"><use href="#surveyor-core"/><circle cx="247" cy="153" r="12" fill="none" stroke="#C7A8EE" stroke-width="4"/><path d="M324 155q12 14 0 28m16-36q20 22 0 44" fill="none" stroke="#9270D9" stroke-width="5" stroke-linecap="round"/></symbol>
+  <symbol id="surveyor-discovering" viewBox="0 0 480 400"><use href="#surveyor-core"/><path d="M384 166l8 16 18 3-13 12 3 18-16-8-16 8 3-18-13-12 18-3z" fill="#F7D779" stroke="#172744" stroke-width="4"/><path d="M354 225q24 18 31 39" fill="none" stroke="#C7A8EE" stroke-width="9" stroke-linecap="round"/></symbol>
+  <symbol id="surveyor-celebration" viewBox="0 0 480 400"><use href="#surveyor-core"/><path d="M189 84q10-10 20 0m84 0q10-10 20 0" fill="none" stroke="#F7D779" stroke-width="5" stroke-linecap="round"/><path d="m105 187 6 13 15 2-11 9 3 14-13-7-13 7 3-14-11-9 15-2zM372 185l6 13 15 2-11 9 3 14-13-7-13 7 3-14-11-9 15-2z" fill="#F7D779" stroke="#172744" stroke-width="3"/></symbol>
+
+  <!-- Apollo 17 LRV: open frame, four wire-mesh wheels, two seats, T-handle, dish antenna. -->
+  <symbol id="apollo17-idle" viewBox="0 0 480 400"><use href="#apollo17-core"/><path d="M245 226q10 8 20 0" fill="none" stroke="#F7D779" stroke-width="4" stroke-linecap="round"/></symbol>
+  <symbol id="apollo17-speaking" viewBox="0 0 480 400"><use href="#apollo17-core"/><ellipse cx="266" cy="230" rx="6" ry="8" fill="#F7AE32" stroke="#172744" stroke-width="3"/><path d="M345 147q12 14 0 28m16-36q20 22 0 44" fill="none" stroke="#C7A8EE" stroke-width="5" stroke-linecap="round"/></symbol>
+  <symbol id="apollo17-discovering" viewBox="0 0 480 400"><use href="#apollo17-core"/><path d="M403 151l8 16 18 3-13 12 3 18-16-8-16 8 3-18-13-12 18-3z" fill="#F7D779" stroke="#172744" stroke-width="4"/><path d="M309 228q36 10 45 33" fill="none" stroke="#C7A8EE" stroke-width="8" stroke-linecap="round"/></symbol>
+  <symbol id="apollo17-celebration" viewBox="0 0 480 400"><use href="#apollo17-core"/><path d="m75 167 6 13 14 2-10 9 2 14-12-7-12 7 2-14-10-9 14-2zM398 169l6 13 14 2-10 9 2 14-12-7-12 7 2-14-10-9 14-2z" fill="#F7D779" stroke="#172744" stroke-width="3"/><path d="M246 226q12-10 24 0" fill="none" stroke="#F7D779" stroke-width="5" stroke-linecap="round"/></symbol>
+
+  <!-- Transparent six-character lineup preview; the seven-character review page adds Spark. -->
+  <g aria-hidden="true">
+    <use href="#spirit-idle" x="0" y="0" width="320" height="400"/>
+    <use href="#opportunity-idle" x="320" y="0" width="320" height="400"/>
+    <use href="#sojourner-idle" x="640" y="0" width="320" height="400"/>
+    <use href="#ingenuity-idle" x="960" y="0" width="320" height="400"/>
+    <use href="#surveyor-idle" x="1280" y="0" width="320" height="400"/>
+    <use href="#apollo17-idle" x="1600" y="0" width="320" height="400"/>
+  </g>
+</svg>

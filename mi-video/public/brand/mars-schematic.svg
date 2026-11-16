@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="mars-ground" x1="96" y1="40" x2="1110" y2="792" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5B969" />
+      <stop offset=".48" stop-color="#D87845" />
+      <stop offset="1" stop-color="#8E3F37" />
+    </linearGradient>
+    <linearGradient id="mars-dune" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FFD18A" stop-opacity=".78" />
+      <stop offset="1" stop-color="#B94F37" stop-opacity=".16" />
+    </linearGradient>
+    <linearGradient id="mars-upper-terrain" x1="0" y1="0" x2="0" y2="1" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B9533D" />
+      <stop offset=".58" stop-color="#D87845" />
+      <stop offset="1" stop-color="#F0A45D" />
+    </linearGradient>
+    <radialGradient id="mars-crater" cx="50%" cy="30%" r="75%">
+      <stop stop-color="#F8C47A" />
+      <stop offset=".68" stop-color="#A94737" />
+      <stop offset="1" stop-color="#773632" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#mars-ground)" />
+  <path d="M0 139c116-69 218-58 327-8 130 61 195 28 310-17 153-60 267-36 392 24 71 34 118 43 171 28v231c-114 42-204 27-316-22-117-51-228-47-356 11-162 73-294 66-431-4C88 341 41 331 0 348V139Z" fill="#B9533D" fill-opacity=".52" />
+  <path d="M0 0h1200v175l-82-22-83 34-95-51-86 39-81-33-90 46-88-38-86 46-86-35-87 41-89-36-84 40-83-32-90 39L0 176Z" fill="url(#mars-upper-terrain)" />
+  <path d="M0 152c116-37 206-20 302-11 118 12 185 1 285-28 129-38 213-29 325 8 116 38 198 41 288 13" fill="none" stroke="#F7BF77" stroke-opacity=".64" stroke-width="8" stroke-linecap="round" />
+  <path d="M0 477c137-38 258-17 369 39 145 74 283 66 413-9 133-77 276-85 418-26v319H0V477Z" fill="#783C39" fill-opacity=".48" />
+  <path d="M0 577c149-67 289-51 432 20 115 57 215 61 337 5 158-73 284-84 431-18v216H0V577Z" fill="url(#mars-dune)" />
+  <path d="M-26 198c131-32 204 7 294 46 93 41 168 35 258-6M689 160c115-54 216-50 343 2 65 26 123 34 195 20M-18 541c131-55 234-50 334 2 133 68 232 78 367 11m78-52c124-53 234-48 372 1" stroke="#F9D29A" stroke-opacity=".55" stroke-width="7" stroke-linecap="round" />
+  <g opacity=".92">
+    <ellipse cx="300" cy="280" rx="139" ry="105" fill="#6E3936" fill-opacity=".32" />
+    <ellipse cx="300" cy="270" rx="116" ry="83" fill="url(#mars-crater)" />
+    <ellipse cx="300" cy="270" rx="84" ry="53" stroke="#F5C17D" stroke-opacity=".72" stroke-width="8" />
+    <path d="M232 301c37-31 90-39 137-14" stroke="#713A35" stroke-opacity=".62" stroke-width="15" stroke-linecap="round" />
+  </g>
+  <g opacity=".9">
+    <ellipse cx="780" cy="320" rx="142" ry="103" fill="#713A36" fill-opacity=".3" />
+    <ellipse cx="780" cy="309" rx="118" ry="82" fill="url(#mars-crater)" />
+    <ellipse cx="780" cy="309" rx="86" ry="51" stroke="#F5C17D" stroke-opacity=".7" stroke-width="8" />
+    <path d="M710 342c43-29 91-37 142-10" stroke="#713A35" stroke-opacity=".6" stroke-width="15" stroke-linecap="round" />
+  </g>
+  <path d="M366 422c56-25 106-27 174 7 43 22 85 22 129-2 52-29 93-29 144 1 48 29 102 29 153 1" stroke="#9B473A" stroke-width="24" stroke-linecap="round" stroke-dasharray="4 19" />
+  <path d="M410 422c43-17 83-16 133 8m160-4c37-19 73-19 112 0" stroke="#F6C580" stroke-opacity=".75" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 13" />
+  <g fill="#F8D5A3" fill-opacity=".7">
+    <circle cx="96" cy="96" r="5" /><circle cx="535" cy="173" r="4" /><circle cx="1038" cy="216" r="6" />
+    <circle cx="145" cy="408" r="4" /><circle cx="1007" cy="500" r="5" /><circle cx="315" cy="679" r="6" />
+    <circle cx="890" cy="674" r="4" /><circle cx="1108" cy="105" r="3" />
+  </g>
+  <path d="M34 753c183-42 300-28 429 2 127 31 248 30 379-4 128-33 241-39 358-9" stroke="#FBE2B8" stroke-opacity=".45" stroke-width="5" stroke-linecap="round" />
+  <path d="M0 800V733q117-37 229 4 143 52 273 3 138-52 270-1 132 50 270 7 83-26 158-5v59Z" fill="#9F4B3B" />
+  <path d="M0 800v-34q129-22 246 20 127 45 254 3 133-44 267 0 147 48 284 4 83-26 149-13v20Z" fill="#F0A45D" fill-opacity=".58" />
+  <path d="M0 776c133-23 212-13 306 8 116 26 208 25 323-3 151-37 249-38 375-5 78 21 133 23 196 13" fill="none" stroke="#F5C17D" stroke-opacity=".46" stroke-width="7" stroke-linecap="round" />
+</svg>
